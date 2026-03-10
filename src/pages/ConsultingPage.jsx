@@ -1,126 +1,114 @@
 import React from 'react';
-import { Box, Container, Typography, List, ListItem, ListItemText, Divider, Button, Paper, Stack } from '@mui/material';
+import { Box, Container, Typography, Stack, Paper, Divider, List, ListItem, ListItemText, Link, Button } from '@mui/material';
 
 const ConsultingPage = () => {
   return (
-    <Box sx={{ py: { xs: 8, md: 12 }, bgcolor: 'background.default' }}>
+    <Box sx={{ py: 8, bgcolor: 'background.default' }}>
       <Container maxWidth="md">
-        <Typography variant="body2" color="secondary.light" sx={{ textTransform: 'uppercase', letterSpacing: '0.12em', mb: 1, fontWeight: 600 }}>
-          Integrated Relational Dynamics, PLLC
-        </Typography>
-        <Typography variant="h1" gutterBottom sx={{ mb: 6, fontSize: { xs: '2.5rem', md: '3.5rem' } }}>
+        <Typography variant="h1" gutterBottom sx={{ mb: 1, fontSize: { xs: '2.5rem', md: '3.5rem' } }}>
           Consulting
+        </Typography>
+        <Typography variant="h5" color="primary.main" gutterBottom sx={{ mb: 6, fontWeight: 600 }}>
+          Now accepting consulting inquiries.
         </Typography>
 
         <Paper elevation={0} sx={{ p: { xs: 4, md: 8 }, border: '1px solid #E0D8D0', bgcolor: 'background.paper' }}>
           
-          <Box component="section" sx={{ mb: 8 }}>
-            <Typography variant="h3" gutterBottom sx={{ fontSize: '1.75rem', fontWeight: 600 }}>
-              What consulting is
+          <Section title="Who this is for">
+             <Typography variant="body1" paragraph color="text.secondary" sx={{ fontSize: '1.15rem', lineHeight: 1.8 }}>
+              Consulting is for people who need clarity before taking action—especially when decisions are high-stakes, costly, or contested. This work helps leaders, clinicians, and organizations identify what is true, clarify responsibilities, and move forward without coercion or performance pressure.
             </Typography>
-            <Typography variant="body1" sx={{ color: 'text.secondary', lineHeight: 2, fontSize: '1.1rem', mb: 4 }}>
-              Consulting at Integrated Relational Dynamics is clarity before action for individuals, leaders, and organizations navigating authority, role strain, and responsibility under cost. The focus is helping you name what is true, clarify what is yours to carry, and identify the next responsible step—without coercion, performance pressure, or outcome guarantees.
+             <Typography variant="body1" gutterBottom sx={{ fontWeight: 600 }}>
+              Common consulting situations:
             </Typography>
-          </Box>
+             <BulletList items={[
+              "Role confusion or unclear authority (who decides, who owns what, who is responsible)",
+              "Decision bottlenecks where every option involves loss or tradeoffs",
+              "Chronic conflict patterns within a team or system (such as escalation, avoidance, or stalled follow-through)",
+              "Accountability breakdowns (process replacing ownership, optics replacing repair)",
+              "Transitions Under Strain (Growth, Restructuring, Leadership Change, Crisis Aftermath)"
+            ]} />
+             <Typography variant="body2" color="error.main" sx={{ mt: 3, fontStyle: 'italic', p: 2, bgcolor: '#FFF9F9', borderLeft: '3px solid #B71C1C' }}>
+               Not a fit for crisis response, HR adjudication, legal advice, or pressure-work meant to control others.
+            </Typography>
+          </Section>
 
-          <Box component="section" sx={{ mb: 8 }}>
-            <Typography variant="h3" gutterBottom sx={{ fontSize: '1.75rem', fontWeight: 600 }}>
-              Common scenarios
+          <Section title="What consulting is">
+            <Typography variant="body1" color="text.secondary">
+              Consulting at Integrated Relational Dynamics involves clarity before action for individuals, leaders, and organizations navigating authority, role strain, and responsibility under cost—especially when decisions feel high-stakes or stuck.
             </Typography>
-            <List>
-              {[
-                "Role confusion or blurred authority (who decides, who owns what, who is accountable)",
-                "Decision bottlenecks when every option carries loss or tradeoffs",
-                "Conflict escalation, misalignment, or chronic tension inside a team/system",
-                "Accountability breakdowns (repeated promises, stalled follow-through, symbolic responsibility)",
-                "Boundary problems that create instability (overreach, avoidance, or unmanaged exposure)",
-                "Transitions that strain responsibility (growth, restructure, leadership change, crisis aftermath)"
-              ].map((item, idx) => (
-                <ListItem key={idx} disableGutters sx={{ alignItems: 'flex-start', py: 1 }}>
-                  <ListItemText primary={<Typography variant="body1" color="text.secondary"><Box component="span" sx={{ mr: 2, color: 'primary.main', fontWeight: 700 }}>—</Box> {item}</Typography>} />
-                </ListItem>
-              ))}
-            </List>
-          </Box>
+          </Section>
 
-          <Box component="section" sx={{ mb: 8 }}>
-            <Typography variant="h3" gutterBottom sx={{ fontSize: '1.75rem', fontWeight: 600 }}>
-              Engagement options
-            </Typography>
-            <List>
-              {[
-                { primary: "Single Consulting Consult (60–90 minutes)", secondary: "Clarify the situation, map constraints, and identify the next responsible step." },
-                { primary: "Short Series (3–6 sessions)", secondary: "Sustained clarity work for complex dynamics, role strain, or decision pressure." },
-                { primary: "Documentation / deliverables (optional)", secondary: "Brief written summary of decisions, boundaries, roles, and next steps." }
-              ].map((item, idx) => (
-                <ListItem key={idx} disableGutters sx={{ alignItems: 'flex-start', py: 1.5 }}>
-                  <ListItemText 
-                    primary={<Typography variant="h5" sx={{ mb: 0.5, fontSize: '1.1rem', fontWeight: 600 }}>{item.primary}</Typography>}
-                    secondary={<Typography variant="body2" color="text.secondary">{item.secondary}</Typography>}
-                  />
-                </ListItem>
-              ))}
-            </List>
-          </Box>
+          <Section title="Engagement options">
+             <BulletList items={[
+              { primary: "Single Consulting Consult (60–90 minutes)", secondary: "Clarify the situation, map constraints, and identify the next responsible step." },
+              { primary: "Short Series (3–6 sessions)", secondary: "Sustained clarity work for complex dynamics, role strain, or decision pressure." },
+              { primary: "Documentation/deliverables (optional)", secondary: "Brief written summary upon request." }
+            ]} isNested />
+          </Section>
 
-          <Box component="section" sx={{ mb: 8, p: 4, bgcolor: 'background.default', borderLeft: '4px solid #2C2520' }}>
-            <Typography variant="h3" gutterBottom sx={{ fontSize: '1.25rem', fontWeight: 600 }}>
-              Boundaries
-            </Typography>
-            <List dense>
-              {[
-                "Consulting is not psychotherapy and is not crisis response.",
-                "Consulting is not legal advice, clinical supervision, or HR adjudication.",
-                "Work is structured for clarity—no outcome guarantees and no use of consulting as leverage over others."
-              ].map((item, idx) => (
-                <ListItem key={idx} disableGutters sx={{ py: 0.5 }}>
-                  <ListItemText primary={<Typography variant="body2" color="text.secondary">• {item}</Typography>} />
-                </ListItem>
-              ))}
-            </List>
-          </Box>
+          <Section title="Boundaries">
+             <BulletList items={[
+              "Consulting is not psychotherapy or crisis intervention.",
+              "Consulting does not offer legal advice, clinical supervision, or HR adjudication.",
+              "There are no guarantees of specific outcomes, and consulting should not be used as leverage over others."
+            ]} />
+          </Section>
 
           <Divider sx={{ my: 8 }} />
 
-          <Box component="section">
-            <Typography variant="h2" align="center" gutterBottom sx={{ fontSize: '2rem', mb: 3 }}>
-              Inquire About Consulting
-            </Typography>
-            <Typography variant="body1" align="center" paragraph sx={{ mb: 4, color: 'text.secondary' }}>
+           <Section title="Request a Consulting Inquiry">
+            <Typography variant="body1" paragraph color="text.secondary">
               If you’d like to explore fit, send an email including:
             </Typography>
-            
-            <List sx={{ mb: 4, maxWidth: '500px', mx: 'auto' }}>
-              {[
-                "Your state and your role (individual / leader / organization)",
-                "The situation in 4–6 sentences (no sensitive details)",
-                "What decision or responsibility question you need clarity on",
-                "Timeline and general availability"
-              ].map((item, idx) => (
-                <ListItem key={idx} disableGutters sx={{ py: 0.5 }}>
-                   <ListItemText primary={<Typography variant="body2" color="text.secondary" align="center">• {item}</Typography>} />
-                </ListItem>
-              ))}
-            </List>
-
-            <Stack direction="row" justifyContent="center">
-              <Button
-                href="mailto:integrated.relational.dynamics@gmail.com?subject=Consulting Inquiry&body=Name/Organization:%0D%0AState:%0D%0ARole:%0D%0ASituation Summary:%0D%0AFocus Question:%0D%0ATimeline/Availability:"
-                variant="contained"
-                size="large"
-                sx={{ py: 2, px: 6 }}
-              >
-                Send Inquiry &rarr;
-              </Button>
+            <BulletList items={[
+              "Your state and role (individual, leader, or organization)",
+              "The situation summarized in four to six sentences without including sensitive details.",
+              "Which decision or responsibility do you need clarity on?",
+              "Timeline and overall availability"
+            ]} />
+            <Stack direction="row" justifyContent="center" sx={{ mt: 6 }}>
+               <Button 
+                variant="contained" 
+                size="large" 
+                href="mailto:integrated.relational.dynamics@gmail.com?subject=Consulting Inquiry"
+               >
+                 Inquire via Email &rarr;
+               </Button>
             </Stack>
-            <Typography variant="body2" align="center" sx={{ mt: 3, color: 'text.secondary' }}>
-               Email: integrated.relational.dynamics@gmail.com
+            <Typography variant="body2" align="center" sx={{ mt: 3, fontWeight: 600 }}>
+              Email: <Link href="mailto:integrated.relational.dynamics@gmail.com" sx={{ textDecoration: 'underline' }}>integrated.relational.dynamics@gmail.com</Link>
             </Typography>
-          </Box>
+          </Section>
+
         </Paper>
       </Container>
     </Box>
   );
 };
+
+const Section = ({ title, children }) => (
+  <Box component="section" sx={{ mb: 8 }}>
+    <Typography variant="h3" gutterBottom sx={{ fontSize: '1.75rem', fontWeight: 600 }}>{title}</Typography>
+    {children}
+  </Box>
+);
+
+const BulletList = ({ items, isNested = false }) => (
+  <List sx={{ mb: 0 }}>
+    {items.map((item, idx) => (
+      <ListItem key={idx} disableGutters sx={{ alignItems: 'flex-start', py: isNested ? 1.5 : 0.5 }}>
+        {isNested ? (
+          <ListItemText 
+            primary={<Typography variant="h6" sx={{ fontSize: '1.1rem', fontWeight: 600 }}>{item.primary}</Typography>} 
+            secondary={<Typography variant="body2" color="text.secondary">{item.secondary}</Typography>} 
+          />
+        ) : (
+          <ListItemText primary={<Typography variant="body1" color="text.secondary"><Box component="span" sx={{ mr: 2, fontWeight: 700 }}>&mdash;</Box> {item}</Typography>} />
+        )}
+      </ListItem>
+    ))}
+  </List>
+);
 
 export default ConsultingPage;

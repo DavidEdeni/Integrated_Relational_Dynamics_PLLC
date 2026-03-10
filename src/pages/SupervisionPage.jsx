@@ -1,94 +1,95 @@
 import React from 'react';
-import { Box, Container, Typography, List, ListItem, ListItemText, Divider, Button, Paper, Stack } from '@mui/material';
+import { Box, Container, Typography, Stack, Paper, Divider, Button, List, ListItem, ListItemText, Grid } from '@mui/material';
 import { Link as RouterLink } from 'react-router-dom';
 
 const SupervisionPage = () => {
   return (
-    <Box sx={{ py: { xs: 8, md: 12 }, bgcolor: 'background.default' }}>
+    <Box sx={{ py: 8, bgcolor: 'background.default' }}>
       <Container maxWidth="md">
-        <Typography variant="body2" color="secondary.light" sx={{ textTransform: 'uppercase', letterSpacing: '0.12em', mb: 1, fontWeight: 600 }}>
-          Integrated Relational Dynamics, PLLC
+        <Typography variant="h1" gutterBottom sx={{ mb: 1, fontSize: { xs: '2.5rem', md: '3.5rem' } }}>
+          Supervision
         </Typography>
-        <Typography variant="h1" gutterBottom sx={{ mb: 6, fontSize: { xs: '2.5rem', md: '3.5rem' } }}>
-          Clinical Supervision 
+        <Typography variant="h5" color="primary.main" gutterBottom sx={{ mb: 6, fontWeight: 600 }}>
+          Now accepting supervision clients (telehealth).
         </Typography>
 
         <Paper elevation={0} sx={{ p: { xs: 4, md: 8 }, border: '1px solid #E0D8D0', bgcolor: 'background.paper' }}>
           
-          <Box component="section" sx={{ mb: 8 }}>
-            <Typography variant="h3" gutterBottom sx={{ fontSize: '1.75rem', fontWeight: 600 }}>
-              Supervision Focus
+          <Section title="Focus">
+            <Typography variant="body1" paragraph color="text.secondary" sx={{ fontSize: '1.15rem', lineHeight: 1.8 }}>
+              Supervision at Integrated Relational Dynamics is designed to foster ethical judgment under pressure. The work emphasizes conceptualization, thorough documentation, clear boundaries, and responsible decision-making when costs rise—without coercion, shortcuts, or outcome guarantees.
             </Typography>
-            <Typography variant="body1" sx={{ color: 'text.secondary', lineHeight: 1.8, mb: 4 }}>
-              This is clinical supervision for clinicians who want clarity without coercion. We focus on building documentation strength, boundary clarity, and the ethical judgment required when clinical stakes and relational costs rise. This work is grounded in naming what is true and clarifying responsibility.
+            <Typography variant="body2" sx={{ fontStyle: 'italic', p: 2, bgcolor: '#F9F7F5', borderLeft: '3px solid #6D5D50' }}>
+              Framework: Bowenian, Structural, Contextual, and Attachment frameworks, with integrative CBT as needed.
             </Typography>
-          </Box>
+          </Section>
 
-          <Box component="section" sx={{ mb: 8 }}>
-            <Typography variant="h3" gutterBottom sx={{ fontSize: '1.75rem', fontWeight: 600 }}>
-              Core Emphasis
+          <Section title="Who this is for">
+            <Typography variant="body1" paragraph color="text.secondary">
+              This supervision is a strong fit for clinicians who want their judgment to hold under pressure. Many supervisees reach out when they’re competent in the room but feel less confident about conceptualization, documentation, and ethical decisions when cases get complex or stakes rise.
             </Typography>
-            <List>
-              {[
-                { primary: "Conceptualization under pressure", secondary: "Identifying the root of the clinical stuck point, not just managing the symptoms." },
-                { primary: "Documentation strength", secondary: "Building notes that are clear, defensible, and reflective of sound risk-thinking." },
-                { primary: "Boundary clarity", secondary: "Managing the strain of dual roles, competing obligations, and organizational pressure." },
-                { primary: "Ethics in action", secondary: "Moving beyond rule-following into responsible action when there is no perfect outcome." }
-              ].map((item, idx) => (
-                <ListItem key={idx} disableGutters sx={{ alignItems: 'flex-start', py: 1.5 }}>
-                  <ListItemText 
-                    primary={<Typography variant="h5" sx={{ mb: 0.5, fontSize: '1.1rem', fontWeight: 600 }}>{item.primary}</Typography>}
-                    secondary={<Typography variant="body2" color="text.secondary">{item.secondary}</Typography>}
-                  />
-                </ListItem>
-              ))}
-            </List>
-          </Box>
+            <Typography variant="body1" gutterBottom sx={{ fontWeight: 600 }}>
+              Common reasons clinicians seek supervision here:
+            </Typography>
+            <BulletList items={[
+              "Clearer case framing and systemic hypotheses—not just technique lists",
+              "Notes that make reasoning visible and defensible",
+              "Boundaries and ethics when role strain and competing obligations collide",
+              "A steady supervision frame with clear expectations and follow-through",
+              "No coercion, shortcuts, or co-signing without reasoning"
+            ]} />
+             <Typography variant="body2" color="error.main" sx={{ mt: 3, fontStyle: 'italic' }}>
+              Not a fit if you need crisis/on-demand coverage, outcome guarantees, or supervision used to pressure someone else.
+            </Typography>
+          </Section>
 
-          <Box component="section" sx={{ mb: 8 }}>
-            <Typography variant="h3" gutterBottom sx={{ fontSize: '1.75rem', fontWeight: 600 }}>
-              Documentation & Defensibility
-            </Typography>
-            <Typography variant="body1" sx={{ color: 'text.secondary', lineHeight: 1.8, mb: 3 }}>
-               Documentation is for the protection of the clinician and the dignity of the client. We do not use "templates-as-cover." Instead, we build notes that demonstrate clinical reasoning and clearly identify the frame of treatment. This is about clarity, not performance.
-            </Typography>
-          </Box>
+          <Section title="Core emphasis">
+             <BulletList items={[
+              "Conceptualization that holds under strain",
+              "Documentation that makes reasoning visible and defensible",
+              "Boundaries & ethics: role clarity, scope, competing obligations",
+              "Responsibility under cost: steady judgment without leverage or urgency-driven fixes"
+            ]} />
+          </Section>
 
-          <Box component="section" sx={{ mb: 8 }}>
-            <Typography variant="h3" gutterBottom sx={{ fontSize: '1.75rem', fontWeight: 600 }}>
-               How Supervision Works
+          <Section title="How supervision works">
+            <Typography variant="body1" paragraph color="text.secondary">
+              Weekly or biweekly (depending on requirements/workload). Meetings are anchored in real-world case material and include:
             </Typography>
-            <Typography variant="body1" sx={{ color: 'text.secondary', mb: 3 }}>
-              Supervision is paced for clarity and ethical containment. Sessions are structured around your clinical setting, license requirements, and current case needs.
-            </Typography>
-             <List>
-              {[
-                "Cadence: Weekly or bi-weekly (telehealth)",
-                "Focus: Case conceptualization, documentation review, and boundary work",
-                "Expectations: Preparation for sessions and a commitment to responsible action"
-              ].map((item, idx) => (
-                <ListItem key={idx} disableGutters sx={{ alignItems: 'flex-start', py: 0.5 }}>
-                  <ListItemText primary={<Typography variant="body2" color="text.secondary"><Box component="span" sx={{ mr: 2, color: 'primary.main', fontWeight: 700 }}>—</Box> {item}</Typography>} />
-                </ListItem>
-              ))}
-            </List>
-          </Box>
+            <BulletList items={[
+              "Case framing + conceptualization",
+              "Intervention planning + boundary clarity",
+              "Documentation pass (what the note must do)",
+              "Clear next-step plan"
+            ]} />
+          </Section>
 
-          <Box component="section" sx={{ mb: 8 }}>
-            <Typography variant="h3" gutterBottom sx={{ fontSize: '1.75rem', fontWeight: 600 }}>
-               Fit / Not Fit
+          <Section title="What supervisees leave with">
+            <BulletList items={[
+              "Clearer case frames and systemic hypotheses",
+              "Stronger notes with visible rationale",
+              "Steadier boundaries when pressure rises"
+            ]} />
+          </Section>
+
+          <Section title="Documentation & defensibility">
+            <Typography variant="body1" color="text.secondary">
+              Notes should make your reasoning visible—not just record events. Templates can support structure, but they can’t replace judgment.
             </Typography>
-             <Grid container spacing={4}>
-               <Grid item xs={12} md={6}>
-                 <Typography variant="h5" sx={{ mb: 2, fontSize: '1rem', fontWeight: 600, color: 'primary.main' }}>Fit if</Typography>
-                 <Typography variant="body2" color="text.secondary">You want supervision that holds clinical reasoning under pressure and prioritizes ethical clarity over quick relief.</Typography>
-               </Grid>
-               <Grid item xs={12} md={6}>
-                 <Typography variant="h5" sx={{ mb: 2, fontSize: '1rem', fontWeight: 600, color: '#B71C1C' }}>Not a fit if</Typography>
-                 <Typography variant="body2" color="text.secondary">You need on-demand crisis support, co-signing without reason, or shortcuts in clinical documentation.</Typography>
-               </Grid>
-             </Grid>
-          </Box>
+          </Section>
+
+          <Section title="Fit">
+            <Grid container spacing={4}>
+              <Grid item xs={12} sm={6}>
+                 <Typography variant="h6" color="primary.main" gutterBottom>Strong fit if</Typography>
+                 <Typography variant="body2" color="text.secondary">You want a clear frame, steady expectations, and support for conceptualization + documentation under pressure.</Typography>
+              </Grid>
+              <Grid item xs={12} sm={6}>
+                 <Typography variant="h6" color="error.main" gutterBottom>May not be a fit if</Typography>
+                 <Typography variant="body2" color="text.secondary">You need crisis/on-demand supervision, co-signing without reasoning, shortcut notes, or outcome guarantees.</Typography>
+              </Grid>
+            </Grid>
+          </Section>
 
           <Divider sx={{ my: 8 }} />
 
@@ -103,6 +104,9 @@ const SupervisionPage = () => {
               Request a Supervision Fit Consult &rarr;
             </Button>
           </Stack>
+           <Typography variant="body2" align="center" sx={{ mt: 3 }}>
+              Email: <Link href="mailto:integrated.relational.dynamics@gmail.com" sx={{ textDecoration: 'underline' }}>integrated.relational.dynamics@gmail.com</Link>
+            </Typography>
 
         </Paper>
       </Container>
@@ -110,8 +114,25 @@ const SupervisionPage = () => {
   );
 };
 
-const Grid = ({ children, container, item, xs, md, spacing }) => (
-  <Box sx={{ display: container ? 'flex' : 'block', flexWrap: 'wrap', gap: spacing ? spacing * 8 : 0, '& > *': item ? { flexBasis: xs ? `${(xs / 12) * 100}%` : 'auto' } : {} }}>
+const Section = ({ title, children }) => (
+  <Box component="section" sx={{ mb: 8 }}>
+    <Typography variant="h3" gutterBottom sx={{ fontSize: '1.75rem', fontWeight: 600 }}>{title}</Typography>
+    {children}
+  </Box>
+);
+
+const BulletList = ({ items }) => (
+  <List sx={{ mb: 0 }}>
+    {items.map((item, idx) => (
+      <ListItem key={idx} disableGutters sx={{ alignItems: 'flex-start', py: 0.5 }}>
+        <ListItemText primary={<Typography variant="body1" color="text.secondary"><Box component="span" sx={{ mr: 2, fontWeight: 700 }}>&mdash;</Box> {item}</Typography>} />
+      </ListItem>
+    ))}
+  </List>
+);
+
+const Link = ({ href, children, sx }) => (
+  <Box component="a" href={href} sx={{ color: 'primary.main', textDecoration: 'none', fontWeight: 600, ...sx }}>
     {children}
   </Box>
 );

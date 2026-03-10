@@ -1,9 +1,9 @@
 import React from 'react';
-import { Box, Container, Typography, List, ListItem, ListItemText, Divider, Button, Stack, Paper } from '@mui/material';
+import { Box, Container, Typography, Stack, Divider, List, ListItem, ListItemText, TextField, Button, Grid, Paper } from '@mui/material';
 
 const SupervisionFitPage = () => {
   return (
-    <Box sx={{ py: { xs: 8, md: 12 }, bgcolor: 'background.default' }}>
+    <Box sx={{ py: 8, bgcolor: 'background.default' }}>
       <Container maxWidth="md">
         <Typography variant="body2" color="secondary.light" sx={{ textTransform: 'uppercase', letterSpacing: '0.12em', mb: 1, fontWeight: 600 }}>
           Integrated Relational Dynamics, PLLC &middot; Kotia K. Whitaker, LMFT-S
@@ -13,120 +13,133 @@ const SupervisionFitPage = () => {
         </Typography>
 
         <Paper elevation={0} sx={{ p: { xs: 4, md: 8 }, border: '1px solid #E0D8D0', bgcolor: 'background.paper' }}>
-          <Box component="section" sx={{ mb: 8 }}>
-            <Typography variant="h3" gutterBottom sx={{ fontSize: '1.75rem', fontWeight: 600 }}>
-              What this is
+          
+          <Section title="What this is" id="what-this-is">
+             <Typography variant="body1" color="text.secondary" sx={{ fontSize: '1.15rem' }}>
+              A Supervision Fit Consult is a structured fit-and-frame-setting conversation to confirm alignment and establish the supervision frame. It is not supervision and does not include case consultation.
             </Typography>
-            <Typography variant="body1" sx={{ color: 'text.secondary', maxWidth: '70ch' }}>
-              A Supervision Fit Consult is a structured fit-and-frame-setting conversation to confirm alignment and establish the supervision frame. This is a dedicated orientation process; it is not supervision and does not include case consultation.
-            </Typography>
-          </Box>
+          </Section>
 
-          <Box component="section" sx={{ mb: 8 }}>
-            <Typography variant="h3" gutterBottom sx={{ fontSize: '1.75rem', fontWeight: 600 }}>
-              What we’ll cover
-            </Typography>
-            <List>
-              {[
-                "Goals & setting: your clinical context, population, and supervision requirements",
-                "Conceptualization habits: identifying stuck points (this is not a performance evaluation)",
-                "Documentation strength: what notes must accomplish and how to tighten them",
-                "Boundaries & ethics under pressure: role strain, competing obligations, and risk",
-                "Cadence & expectations: establishing a clear frame for ongoing work"
-              ].map((item, idx) => (
-                <ListItem key={idx} disableGutters sx={{ alignItems: 'flex-start', py: 1 }}>
-                  <ListItemText primary={<Typography variant="body1" color="text.secondary"><Box component="span" sx={{ mr: 2, color: 'primary.main', fontWeight: 700 }}>—</Box> {item}</Typography>} />
-                </ListItem>
-              ))}
-            </List>
-          </Box>
+          <Section title="What we’ll cover" id="what-we-will-cover">
+            <BulletList items={[
+              "Goals, setting, population, and requirements",
+              "Conceptualization habits and current stuck points (not a performance evaluation)",
+              "Documentation strength: what notes must do and where they can be tightened",
+              "Boundaries and ethics under pressure (role strain, competing obligations, risk)",
+              "Proposed cadence and expectations if fit is confirmed"
+            ]} />
+          </Section>
 
-          <Box component="section" sx={{ mb: 8 }}>
-            <Typography variant="h3" gutterBottom sx={{ fontSize: '1.75rem', fontWeight: 600 }}>
-              What to bring
-            </Typography>
-            <Typography variant="body1" sx={{ mb: 2, color: 'text.secondary' }}>A simple checklist for our conversation:</Typography>
-            <List>
-              {[
-                "Setting & population (context, role, constraints)",
-                "License status / supervision requirements (if applicable)",
-                "1–2 brief examples of cases or situations you want help conceptualizing (no identifying details)",
-                "Documentation questions you’re currently stuck on",
-                "Boundary or ethics scenarios you want to think through"
-              ].map((item, idx) => (
-                <ListItem key={idx} disableGutters sx={{ alignItems: 'flex-start', py: 1 }}>
-                  <ListItemText primary={<Typography variant="body1" color="text.secondary"><Box component="span" sx={{ mr: 2, color: 'primary.main', fontWeight: 700 }}>—</Box> {item}</Typography>} />
-                </ListItem>
-              ))}
-            </List>
-          </Box>
+          <Section title="What to bring" id="what-to-bring">
+             <BulletList items={[
+              "Setting and population (context, role, constraints)",
+              "License status and any supervision requirements (if applicable)",
+              "1–2 brief examples of cases/situations to strengthen conceptualization for (no identifying details)",
+              "Documentation questions (brief)",
+              "Boundary/ethics scenarios (brief)"
+            ]} />
+          </Section>
 
-          <Box component="section" sx={{ mb: 8 }}>
-            <Typography variant="h3" gutterBottom sx={{ fontSize: '1.75rem', fontWeight: 600 }}>
-              Logistics
-            </Typography>
-            <List>
-              {[
-                "Duration: 45–60 minutes via secure telehealth",
-                "Private pay: Fee provided upon email inquiry",
-                "Email inquiries only (no phone screen at this stage)",
-                "Cancellation/reschedule: 24-hour notice requested to avoid late-cancel fees"
-              ].map((item, idx) => (
-                <ListItem key={idx} disableGutters sx={{ alignItems: 'flex-start', py: 1 }}>
-                  <ListItemText primary={<Typography variant="body1" color="text.secondary"><Box component="span" sx={{ mr: 2, color: 'primary.main', fontWeight: 700 }}>—</Box> {item}</Typography>} />
-                </ListItem>
-              ))}
-            </List>
-          </Box>
+          <Section title="Logistics" id="logistics">
+             <BulletList items={[
+              "Duration: 45–60 minutes (telehealth)",
+              "Private pay: Fee provided by email",
+              "Email inquiries only",
+              "Cancellation/reschedule: 24 hours’ notice requested to avoid a late-cancel fee"
+            ]} />
+          </Section>
 
-          <Box component="section" sx={{ mb: 8, p: 4, bgcolor: '#FFF9F9', border: '1px solid #FFE0E0' }}>
-            <Typography variant="h3" gutterBottom sx={{ fontSize: '1.5rem', color: '#B71C1C', fontWeight: 600 }}>
-              Stopping points / Not a fit
-            </Typography>
-            <List>
-              {[
-                "No crisis coverage provided",
-                "No outcome guarantees for clinical cases",
-                "Supervision is not used as leverage in relational or organizational conflict"
-              ].map((item, idx) => (
-                <ListItem key={idx} disableGutters sx={{ alignItems: 'flex-start', py: 0.5 }}>
-                  <ListItemText primary={<Typography variant="body2" sx={{ color: '#D32F2F' }}><Box component="span" sx={{ mr: 2 }}>—</Box> {item}</Typography>} />
-                </ListItem>
-              ))}
-            </List>
-            <Typography variant="body2" sx={{ mt: 2, fontStyle: 'italic', color: 'text.secondary' }}>
-              “If not a fit, I’ll help you find a better match.”
-            </Typography>
+          <Box sx={{ mb: 8, p: 4, bgcolor: '#FFF9F9', border: '1px solid #FFE0E0' }}>
+            <Typography variant="h5" sx={{ mb: 3, color: '#B71C1C', fontWeight: 600 }}>Stopping points / not a fit</Typography>
+            <BulletList color="#B71C1C" items={[
+              "No crisis coverage or on-demand availability",
+              "No outcome guarantees",
+              "Supervision is not used as leverage",
+              "If this isn’t the right fit, I’ll help you identify a better match"
+            ]} />
           </Box>
 
           <Divider sx={{ my: 8 }} />
 
-          <Box component="section" id="request-consult">
+          <Box id="inquiry-form">
             <Typography variant="h2" align="center" gutterBottom sx={{ fontSize: '2.25rem', mb: 3 }}>
               Request a Consult
             </Typography>
             <Typography variant="body1" align="center" paragraph sx={{ mb: 6, color: 'text.secondary' }}>
-              To explore a Supervision Fit Consult, please send an email including the details below. This structure helps protect your time and ensures we start with clarity.
+              To explore a Supervision Fit Consult, please provide the following details. This structure helps minimize back-and-forth and respects your clinical time.
             </Typography>
-            
-            <Stack direction="row" justifyContent="center">
-              <Button
-                href="mailto:integrated.relational.dynamics@gmail.com?subject=Supervision Fit Consult Inquiry&body=Name:%0D%0AState:%0D%0ACurrent Role (Associate/Intern/Fully Licensed):%0D%0AClinical Setting / Population:%0D%0AWhat you want from supervision (short):%0D%0AAny documentation/boundary focus (short):%0D%0AAvailability for 10-15 min screening:"
-                variant="contained"
-                size="large"
-                sx={{ py: 2.5, px: 8, fontSize: '1.1rem' }}
-              >
-                Inquire via Email &rarr;
-              </Button>
-            </Stack>
-            <Typography variant="body2" align="center" sx={{ mt: 3, color: 'text.secondary', fontStyle: 'italic' }}>
-              No PHI (Protected Health Information) via email, please.
+
+            <Grid container spacing={3}>
+              <Grid item xs={12} sm={6}>
+                <TextField fullWidth label="Name" variant="outlined" />
+              </Grid>
+              <Grid item xs={12} sm={6}>
+                <TextField fullWidth label="Email" variant="outlined" />
+              </Grid>
+              <Grid item xs={12} sm={6}>
+                <TextField fullWidth label="State" variant="outlined" />
+              </Grid>
+              <Grid item xs={12} sm={6}>
+                <TextField fullWidth label="Current Role (Associate / Intern / Licensed)" variant="outlined" />
+              </Grid>
+              <Grid item xs={12}>
+                <TextField fullWidth multiline rows={3} label="What you're seeking from supervision (short)" variant="outlined" />
+              </Grid>
+              <Grid item xs={12}>
+                <TextField fullWidth multiline rows={2} label="Documentation or boundary focus (optional, short)" variant="outlined" />
+              </Grid>
+              <Grid item xs={12}>
+                <TextField fullWidth label="Availability (days/times)" variant="outlined" />
+              </Grid>
+              <Grid item xs={12}>
+                 <Stack direction="row" justifyContent="center">
+                   <Button 
+                    variant="contained" 
+                    size="large" 
+                    sx={{ py: 2, px: 8 }}
+                    href="mailto:integrated.relational.dynamics@gmail.com?subject=Supervision Fit Consult Inquiry"
+                   >
+                     Submit Inquiry via Email &rarr;
+                   </Button>
+                 </Stack>
+              </Grid>
+            </Grid>
+
+            <Typography variant="body2" align="center" sx={{ mt: 4, color: 'text.secondary', fontStyle: 'italic' }}>
+              Communication boundary: Please do not include PHI or identifying client details in email or the form. Email is not monitored for emergencies.
+            </Typography>
+            <Typography variant="body2" align="center" sx={{ mt: 2 }}>
+              Email: <Link href="mailto:integrated.relational.dynamics@gmail.com" sx={{ textDecoration: 'underline' }}>integrated.relational.dynamics@gmail.com</Link>
             </Typography>
           </Box>
+
         </Paper>
       </Container>
     </Box>
   );
 };
+
+const Section = ({ title, children, id }) => (
+  <Box id={id} component="section" sx={{ mb: 8 }}>
+    <Typography variant="h2" gutterBottom sx={{ fontSize: '1.75rem', fontWeight: 600 }}>{title}</Typography>
+    {children}
+  </Box>
+);
+
+const BulletList = ({ items, color = 'text.secondary' }) => (
+  <List sx={{ mb: 0 }}>
+    {items.map((item, idx) => (
+      <ListItem key={idx} disableGutters sx={{ alignItems: 'flex-start', py: 0.5 }}>
+        <ListItemText primary={<Typography variant="body1" sx={{ color }}><Box component="span" sx={{ mr: 2, fontWeight: 700 }}>&mdash;</Box> {item}</Typography>} />
+      </ListItem>
+    ))}
+  </List>
+);
+
+const Link = ({ href, children, sx }) => (
+  <Box component="a" href={href} sx={{ color: 'primary.main', textDecoration: 'none', fontWeight: 600, ...sx }}>
+    {children}
+  </Box>
+);
 
 export default SupervisionFitPage;
