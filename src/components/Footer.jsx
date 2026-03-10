@@ -1,9 +1,25 @@
 import React from 'react';
 import { Box, Container, Typography, Grid, Link, Divider, Stack } from '@mui/material';
-import { Link as RouterLink } from 'react-router-dom';
-import { Link as ScrollLink } from 'react-scroll';
+import { useNavigate, useLocation, Link as RouterLink } from 'react-router-dom';
+import { scroller } from 'react-scroll';
 
 const Footer = () => {
+  const navigate = useNavigate();
+  const location = useLocation();
+
+  const handleNavClick = (target) => {
+    if (location.pathname !== '/') {
+      navigate('/?scroll=' + target);
+    } else {
+      scroller.scrollTo(target, {
+        duration: 500,
+        delay: 0,
+        smooth: 'easeInOutQuart',
+        offset: -70
+      });
+    }
+  };
+
   return (
     <Box component="footer" id="contact" sx={{ bgcolor: 'background.paper', pt: 8, pb: 6, borderTop: '1px solid #E0D8D0' }}>
       <Container maxWidth="lg">
@@ -62,11 +78,7 @@ const Footer = () => {
             <FooterLink to="/fees" label="Fees" />
             <FooterLink to="/resources" label="Resources" />
             <Link 
-              component={ScrollLink} 
-              to="contact" 
-              smooth={true} 
-              offset={-70} 
-              duration={500}
+              onClick={() => handleNavClick('contact')}
               sx={{ 
                 fontSize: '0.85rem', 
                 color: 'text.secondary', 
