@@ -78,6 +78,7 @@ const Footer = () => {
             <FooterLink to="/fees" label="Fees" />
             <FooterLink to="/resources" label="Resources" />
             <Link 
+              component="button"
               onClick={() => handleNavClick('contact')}
               sx={{ 
                 fontSize: '0.85rem', 
