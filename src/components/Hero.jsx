@@ -53,6 +53,7 @@ const Hero = () => {
               Request a Supervision Fit Consult &rarr;
             </Button>
             <Box sx={{ mt: 4, display: 'flex', gap: 3 }}>
+              <LinkRouter to="/supervision" label="Explore Supervision &rarr;" />
               <LinkRouter to="/therapy" label="Explore Therapy &rarr;" />
               <LinkRouter to="/consulting" label="Explore Consulting &rarr;" />
             </Box>

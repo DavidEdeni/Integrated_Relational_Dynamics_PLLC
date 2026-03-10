@@ -56,24 +56,35 @@ const Services = () => {
                   {service.status}
                 </Typography>
                 <Stack spacing={2}>
-                  {service.isPrimary && (
+                  {service.isPrimary ? (
+                    <>
+                      <Button
+                        component={RouterLink}
+                        to="/supervision-fit"
+                        variant="contained"
+                        fullWidth
+                      >
+                        Request a Supervision Fit Consult &rarr;
+                      </Button>
+                      <Button
+                        component={RouterLink}
+                        to={service.exploreLink}
+                        variant="outlined"
+                        fullWidth
+                      >
+                        Explore Supervision &rarr;
+                      </Button>
+                    </>
+                  ) : (
                     <Button
                       component={RouterLink}
-                      to="/supervision-fit"
-                      variant="contained"
+                      to={service.exploreLink}
+                      variant="outlined"
                       fullWidth
                     >
-                      Request a Supervision Fit Consult &rarr;
+                      Explore {service.title.split(' (')[0]} &rarr;
                     </Button>
                   )}
-                  <Button
-                    component={RouterLink}
-                    to={service.exploreLink}
-                    variant="outlined"
-                    fullWidth
-                  >
-                    Explore {service.title.split(' (')[0]} &rarr;
-                  </Button>
                 </Stack>
               </Paper>
             </Grid>
