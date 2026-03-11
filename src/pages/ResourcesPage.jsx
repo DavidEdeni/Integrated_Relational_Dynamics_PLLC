@@ -1,5 +1,5 @@
-import { Box, Container, Typography, Stack, Paper, Divider, List, ListItem, ListItemText, Link } from '@mui/material';
-
+import { Box, Container, Typography, Stack, Divider, Link, Button } from '@mui/material';
+import { Link as RouterLink } from 'react-router-dom';
 
 const PAGE_WRAPPER_STYLES = { py: { xs: 12, md: 18 }, bgcolor: 'background.default' };
 const PAGE_TITLE_STYLES = { 
@@ -131,44 +131,6 @@ const ResourceLink = ({ label, shade = false }) => (
     >
       View PDF &rarr;
     </Link>
-  </Box>
-);
-
-export default ResourcesPage;
-      </Container>
-    </Box>
-  );
-};
-
-const ResourceSection = ({ title, children }) => (
-  <Box sx={{ mb: 8 }}>
-    <Typography variant="h4" gutterBottom sx={RESOURCE_SUBHEADER_STYLES}>
-      {title}
-    </Typography>
-    {children}
-  </Box>
-);
-
-const ResourceLink = ({ label, shade = false }) => (
-  <Box sx={RESOURCE_LINK_ITEM_STYLES(shade)}>
-     <Typography variant="body1" sx={{ fontWeight: 600 }}>{label}</Typography>
-     <Link href="#" sx={{ fontSize: '0.85rem', fontWeight: 600 }} aria-label={`View PDF for ${label}`}>View PDF &rarr;</Link>
-  </Box>
-);
-
-const RequestItem = ({ title, code }) => (
-  <Box sx={REQUEST_BOX_STYLES}>
-    <Typography variant="body1" sx={{ fontWeight: 600, mb: 1 }}>{title}</Typography>
-    <Box sx={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center' }}>
-      <Typography variant="caption" sx={{ color: 'text.secondary' }}>({code})</Typography>
-      <Link 
-        href={`mailto:integrated.relational.dynamics@gmail.com?subject=Request for Draft: ${code}`}
-        sx={{ fontSize: '0.85rem', fontWeight: 600 }}
-        aria-label={`Request draft ${code} by email`}
-      >
-        Request by email &rarr;
-      </Link>
-    </Box>
   </Box>
 );
 

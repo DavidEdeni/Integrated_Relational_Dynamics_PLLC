@@ -1,5 +1,5 @@
-import { Box, Container, Typography, Stack, Divider, List, ListItem, ListItemText, TextField, Button, Grid, Paper } from '@mui/material';
-
+import { Box, Container, Typography, Divider, TextField, Button, Grid } from '@mui/material';
+import { Link as RouterLink } from 'react-router-dom';
 
 const PAGE_WRAPPER_STYLES = { py: { xs: 12, md: 18 }, bgcolor: 'background.default' };
 const PAGE_TITLE_STYLES = { 
@@ -102,33 +102,6 @@ const SupervisionFitPage = () => {
 const Section = ({ title, children }) => (
   <Box component="section" sx={{ mb: 8 }}>
     <Typography variant="h3" sx={{ fontSize: '1.25rem', fontWeight: 600, mb: 3, textTransform: 'uppercase', letterSpacing: '0.05em' }}>{title}</Typography>
-    {children}
-  </Box>
-);
-      </Container>
-    </Box>
-  );
-};
-
-const Section = ({ title, children, id }) => (
-  <Box id={id} component="section" sx={{ mb: 8 }}>
-    <Typography variant="h2" gutterBottom sx={SECTION_HEADER_STYLES}>{title}</Typography>
-    {children}
-  </Box>
-);
-
-const BulletList = ({ items, color = 'text.secondary' }) => (
-  <List sx={{ mb: 0 }}>
-    {items.map((item, idx) => (
-      <ListItem key={idx} disableGutters sx={{ alignItems: 'flex-start', py: 0.5 }}>
-        <ListItemText primary={<Typography variant="body1" sx={{ color }}><Box component="span" sx={{ mr: 2, fontWeight: 700 }} aria-hidden="true">&mdash;</Box> {item}</Typography>} />
-      </ListItem>
-    ))}
-  </List>
-);
-
-const PageLink = ({ href, children, sx }) => (
-  <Box component="a" href={href} sx={{ color: 'primary.main', textDecoration: 'none', fontWeight: 600, ...sx }}>
     {children}
   </Box>
 );

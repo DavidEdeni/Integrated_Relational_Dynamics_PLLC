@@ -1,5 +1,5 @@
-import { Box, Container, Typography, Stack, Paper, Divider, List, ListItem, ListItemText, Link, Button } from '@mui/material';
-
+import { Box, Container, Typography, Divider, List, ListItem, ListItemText, Button } from '@mui/material';
+import { Link as RouterLink } from 'react-router-dom';
 
 const PAGE_WRAPPER_STYLES = { py: { xs: 12, md: 18 }, bgcolor: 'background.default' };
 const PAGE_TITLE_STYLES = { 
@@ -111,10 +111,6 @@ const BulletList = ({ items }) => (
       </ListItem>
     ))}
   </List>
-);
-
-export default ConsultingPage;
-/List>
 );
 
 export default ConsultingPage;
