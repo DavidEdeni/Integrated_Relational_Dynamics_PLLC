@@ -1,7 +1,7 @@
-import React, { memo } from 'react';
+import { memo } from 'react';
 import { Box, Container, Typography, Button, Stack, Link } from '@mui/material';
 import { Link as RouterLink } from 'react-router-dom';
-import heroBg from '../assets/header_wood.jpg';
+import heroBg from '../assets/8a46ffa53352710009d9cc110eff458f-1.jpg';
 
 const HERO_SECTION_STYLES = {
   bgcolor: 'primary.main',

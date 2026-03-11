@@ -1,6 +1,6 @@
 import React, { memo } from 'react';
 import { Box, Container, Typography, Grid, List, ListItem, ListItemText } from '@mui/material';
-import treeImg from '../assets/tree.jpg';
+import treeImg from '../assets/8a46ffa53352710009d9cc110eff458f-2.jpg';
 
 const HELP_IMAGE_STYLES = {
   width: '100%',

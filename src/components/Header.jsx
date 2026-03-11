@@ -1,8 +1,8 @@
-import React, { memo, useCallback, useEffect } from 'react';
+import { memo, useCallback, useEffect } from 'react';
 import { AppBar, Box, Toolbar, Typography, Container, Link } from '@mui/material';
 import { Link as RouterLink, useLocation, useNavigate } from 'react-router-dom';
 import { scroller } from 'react-scroll';
-import logo from '../assets/logo.jpg';
+import logo from '../assets/8a46ffa53352710009d9cc110eff458f-0.jpg';
 
 const HEADER_STYLES = { 
   bgcolor: 'rgba(255, 255, 255, 0.95)', 

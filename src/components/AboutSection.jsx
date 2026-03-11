@@ -2,7 +2,7 @@ import React, { memo } from 'react';
 import { Box, Container, Typography, Grid, List, ListItem, ListItemText, Link } from '@mui/material';
 import { Link as RouterLink } from 'react-router-dom';
 import { Element } from 'react-scroll';
-import hourglassImg from '../assets/hourglass.jpg';
+import hourglassImg from '../assets/8a46ffa53352710009d9cc110eff458f-3.jpg';
 
 const ABOUT_IMAGE_STYLES = {
   width: '100%',
