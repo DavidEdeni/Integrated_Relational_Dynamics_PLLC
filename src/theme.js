@@ -3,40 +3,40 @@ import { createTheme } from '@mui/material/styles';
 const theme = createTheme({
   palette: {
     primary: {
-      main: '#2C2520', // Deep Charcoal/Wood
-      contrastText: '#F5F5F5',
+      main: '#2D2926', // Charcoal/Dark Brown
+      contrastText: '#F2EFE9',
     },
     secondary: {
-      main: '#5D544B', // Muted Earth Tone
+      main: '#6D5D50', // Muted Brown
       light: '#A89E94',
     },
     background: {
-      default: '#FDFCFB', // Very light parchment/warm grey
-      paper: '#FFFFFF',
+      default: '#F2EFE9', // Sophisticated Creme
+      paper: '#FDFCFB',
     },
     text: {
-      primary: '#1A1A1A',
-      secondary: '#4A4A4A',
+      primary: '#2D2926',
+      secondary: '#6D5D50',
     },
     divider: '#E0D8D0',
   },
   typography: {
-    fontFamily: '"Inter", "Source Sans Pro", sans-serif',
+    fontFamily: '"Inter", "system-ui", sans-serif',
     h1: {
       fontFamily: '"Playfair Display", serif',
-      fontWeight: 600,
-      letterSpacing: '-0.02em',
-      color: '#2C2520',
+      fontWeight: 500,
+      letterSpacing: '-0.01em',
+      color: '#2D2926',
     },
     h2: {
       fontFamily: '"Playfair Display", serif',
       fontWeight: 500,
-      color: '#2C2520',
+      color: '#2D2926',
     },
     h3: {
       fontFamily: '"Playfair Display", serif',
       fontWeight: 500,
-      color: '#2C2520',
+      color: '#2D2926',
     },
     h4: {
       fontFamily: '"Playfair Display", serif',
@@ -46,19 +46,19 @@ const theme = createTheme({
       fontFamily: '"Inter", sans-serif',
       fontWeight: 600,
       textTransform: 'uppercase',
-      letterSpacing: '0.1em',
-      fontSize: '0.9rem',
-      color: '#4A4A4A',
+      letterSpacing: '0.12em',
+      fontSize: '0.85rem',
+      color: '#6D5D50',
     },
     body1: {
-      fontSize: '1.05rem',
-      lineHeight: 1.7,
-      fontWeight: 300,
+      fontSize: '1.1rem',
+      lineHeight: 1.8,
+      fontWeight: 400,
     },
     body2: {
       fontSize: '0.95rem',
-      lineHeight: 1.6,
-      fontWeight: 300,
+      lineHeight: 1.7,
+      fontWeight: 400,
     },
     button: {
       fontFamily: '"Inter", sans-serif',
@@ -68,36 +68,42 @@ const theme = createTheme({
     },
   },
   components: {
+    MuiCssBaseline: {
+      styleOverrides: {
+        body: {
+          backgroundColor: '#F2EFE9',
+          color: '#2D2926',
+        },
+      },
+    },
     MuiButton: {
       styleOverrides: {
         root: {
-          borderRadius: 0,
-          padding: '12px 28px',
-          transition: 'all 0.3s ease',
+          borderRadius: '2px',
+          padding: '14px 32px',
+          transition: 'all 0.4s cubic-bezier(0.4, 0, 0.2, 1)',
         },
         containedPrimary: {
-          backgroundColor: '#2C2520',
+          backgroundColor: '#2D2926',
           '&:hover': {
-            backgroundColor: '#1A1A1A',
-            opacity: 0.95,
+            backgroundColor: '#000000',
+            transform: 'translateY(-1px)',
           },
         },
         outlinedPrimary: {
-          borderColor: '#2C2520',
-          color: '#2C2520',
+          borderColor: '#2D2926',
+          color: '#2D2926',
           '&:hover': {
-            backgroundColor: '#F5F5F5',
-            borderColor: '#1A1A1A',
+            backgroundColor: 'rgba(45, 41, 38, 0.04)',
+            borderColor: '#000000',
           },
         },
       },
     },
-    MuiCard: {
+    MuiPaper: {
       styleOverrides: {
         root: {
-          borderRadius: 0,
-          boxShadow: 'none',
-          border: '1px solid #E0D8D0',
+          borderRadius: '2px',
         },
       },
     },

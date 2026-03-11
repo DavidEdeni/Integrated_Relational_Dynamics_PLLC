@@ -7,22 +7,27 @@ import hourglassImg from '../assets/8a46ffa53352710009d9cc110eff458f-3.jpg';
 const ABOUT_IMAGE_STYLES = {
   width: '100%',
   height: 'auto',
-  boxShadow: '20px 20px 0px #E0D8D0',
-  border: '1px solid #E0D8D0'
+  borderRadius: '2px'
 };
 
-const SECTION_BOX_STYLES = { py: 12, bgcolor: 'background.paper' };
-const HEADER_TITLE_STYLES = { fontSize: '2.5rem', mb: 8 };
-const SUBHEADER_TITLE_STYLES = { fontSize: '1.5rem', fontWeight: 600, mb: 3 };
-const ITEM_TEXT_STYLES = { py: 0.5 };
-const ITALIC_TEXT_STYLES = { mt: 4, fontStyle: 'italic', color: 'text.secondary' };
-const LINK_WRAPPER_STYLES = { mt: 4 };
+const SECTION_BOX_STYLES = { py: { xs: 12, md: 18 }, bgcolor: 'background.default' };
+const HEADER_TITLE_STYLES = { mb: 8, position: 'relative', '&:after': { content: '""', position: 'absolute', bottom: -15, left: '50%', transform: 'translateX(-50%)', width: 40, height: 1, bgcolor: 'primary.main', opacity: 0.2 } };
+const SUBHEADER_TITLE_STYLES = { fontSize: '1.25rem', fontWeight: 600, mb: 3, letterSpacing: '0.05em', textTransform: 'uppercase' };
+const ITEM_TEXT_STYLES = { py: 0.75 };
+const ITALIC_TEXT_STYLES = { mt: 4, fontStyle: 'italic', color: 'text.secondary', fontWeight: 300 };
+const LINK_WRAPPER_STYLES = { mt: 6 };
 const CTA_LINK_STYLES = {
-  fontSize: '1rem',
+  fontSize: '0.85rem',
   fontWeight: 600,
   color: 'primary.main',
-  textDecoration: 'underline',
-  '&:hover': { textDecoration: 'none' }
+  textDecoration: 'none',
+  textTransform: 'uppercase',
+  letterSpacing: '0.1em',
+  borderBottom: '1px solid',
+  borderColor: 'rgba(45, 41, 38, 0.3)',
+  pb: 0.5,
+  transition: 'all 0.3s ease',
+  '&:hover': { borderColor: 'primary.main' }
 };
 
 const AboutSection = () => {

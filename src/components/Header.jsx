@@ -5,16 +5,17 @@ import { scroller } from 'react-scroll';
 import logo from '../assets/8a46ffa53352710009d9cc110eff458f-0.jpg';
 
 const HEADER_STYLES = { 
-  bgcolor: 'rgba(255, 255, 255, 0.95)', 
-  borderBottom: '1px solid #E0D8D0', 
-  backdropFilter: 'blur(8px)' 
+  bgcolor: 'primary.main', 
+  borderBottom: '1px solid rgba(255, 255, 255, 0.1)', 
+  backdropFilter: 'blur(8px)',
+  zIndex: 1100
 };
 
 const LOGO_BOX_STYLES = { 
   display: 'flex', 
   alignItems: 'center', 
   textDecoration: 'none', 
-  color: 'primary.main' 
+  color: 'primary.contrastText' 
 };
 
 const LOGO_IMAGE_STYLES = { 
@@ -23,10 +24,12 @@ const LOGO_IMAGE_STYLES = {
 };
 
 const LOGO_TEXT_STYLES = {
-  fontWeight: 700,
-  fontSize: { xs: '1rem', md: '1.25rem' },
-  letterSpacing: '0.05em',
+  fontFamily: '"Playfair Display", serif',
+  fontWeight: 500,
+  fontSize: { xs: '0.9rem', md: '1.1rem' },
+  letterSpacing: '0.1em',
   lineHeight: 1.2,
+  color: 'primary.contrastText',
   display: { xs: 'none', sm: 'block' }
 };
 
@@ -42,19 +45,20 @@ const NAV_BOX_STYLES = {
 };
 
 const NAV_ITEM_STYLES = {
-  color: 'text.secondary',
-  fontSize: '0.85rem',
-  fontWeight: 600,
+  color: 'rgba(242, 239, 233, 0.8)',
+  fontSize: '0.8rem',
+  fontWeight: 500,
   textTransform: 'uppercase',
-  letterSpacing: '0.1em',
+  letterSpacing: '0.15em',
   textDecoration: 'none',
   cursor: 'pointer',
   border: 'none',
   bgcolor: 'transparent',
   p: 0,
+  transition: 'all 0.3s ease',
   '&:hover': {
-    color: 'primary.main',
-    textDecoration: 'underline'
+    color: '#FFF',
+    transform: 'translateY(-1px)'
   }
 };
 

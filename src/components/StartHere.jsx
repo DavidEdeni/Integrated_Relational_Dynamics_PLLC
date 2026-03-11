@@ -50,56 +50,52 @@ const StartHere = () => {
               <Typography variant="body2" color="text.secondary" sx={ITALIC_SUBTEXT_STYLES}>
                 Held via secure video (Zoom) or by phone if requested.
               </Typography>
-            </Box>
-
-            <Box sx={{ mb: 4 }}>
-              <Typography variant="h3" sx={SUBHEADER_TITLE_STYLES}>
-                Step 2 — Supervision Fit Consult (45–60 minutes)
-              </Typography>
-              <Typography variant="body1" color="text.secondary">
-                A structured conversation to confirm fit and establish a clear supervision frame.
-              </Typography>
-            </Box>
-
-            <Typography variant="body1" sx={HIGHLIGHT_TEXT_STYLES}>
-              If fit is confirmed, ongoing supervision can begin right away.
+        <Grid container spacing={10} alignItems="center">
+          <Grid item xs={12} md={7}>
+            <Typography variant="h2" sx={TITLE_STYLES}>
+              Start Here: Supervision Fit Consult
+            </Typography>
+            
+            <Typography variant="body1" sx={BODY_TEXT_STYLES}>
+              Supervision is not a commodity—it is a frame. It works best when the frame is stable and the focus is clear.
             </Typography>
 
-            <Typography variant="h4" sx={LIST_LABEL_STYLES}>
-              You can expect
+            <Typography variant="h6" sx={{ mb: 3, fontWeight: 600, letterSpacing: '0.1em', textTransform: 'uppercase', color: 'secondary.light', fontSize: '0.85rem' }}>
+              Your current context:
             </Typography>
+
             <List sx={{ mb: 4 }}>
               {[
-                "Goals + context clarified (setting, population, requirements, constraints)",
-                "Conceptualization habits + stuck points (not a performance evaluation)",
-                "Documentation focus: what notes must do and how to tighten them",
-                "Boundaries + ethics under pressure (role strain, competing obligations, risk)",
-                "Proposed cadence + expectations (if fit is confirmed)"
+                "You’re a clinician in private practice, an agency, or a group setting.",
+                "You need a supervisor who values conceptualization support and documentation strength.",
+                "You want someone who won’t co-sign decisions without shared reasoning.",
+                "You value a steady pace of responsibility over a cycle of urgency."
               ].map((item, idx) => (
-                <ListItem key={idx} disableGutters sx={{ py: 0.5 }}>
-                  <ListItemText primary={<Typography variant="body2" color="text.secondary">&bull; {item}</Typography>} />
+                <ListItem key={idx} disableGutters sx={BULLET_POINT_STYLES}>
+                  <ListItemText primary={item} />
                 </ListItem>
               ))}
             </List>
-
-            <Typography variant="body2" sx={FIT_SUMMARY_STYLES}>
-              Fit Summary (1 page), emailed within 48–72 hours (if requested).
-            </Typography>
-
-            <Typography variant="body2" sx={STAKE_TAGLINE_STYLES}>
-              Stopping point: This work is not used to create leverage. It is used to create clarity.
-            </Typography>
 
             <Button
               component={RouterLink}
               to="/supervision-fit"
               variant="contained"
-              size="large"
               sx={CTA_BUTTON_STYLES}
               aria-label="Request a Supervision Fit Consultation"
             >
-              Request a Supervision Fit Consult &rarr;
+              Request a Consultation &rarr;
             </Button>
+          </Grid>
+          
+          <Grid item xs={12} md={5}>
+            <Box
+              component="img"
+              src={treeImg}
+              alt="Deeply rooted tree"
+              loading="lazy"
+              sx={IMAGE_STYLES}
+            />
           </Grid>
         </Grid>
       </Container>

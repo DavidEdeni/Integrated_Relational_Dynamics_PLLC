@@ -5,21 +5,21 @@ import treeImg from '../assets/8a46ffa53352710009d9cc110eff458f-2.jpg';
 const HELP_IMAGE_STYLES = {
   width: '100%',
   height: 'auto',
-  boxShadow: '20px 20px 0px #E0D8D0',
-  border: '1px solid #E0D8D0'
+  borderRadius: '2px'
 };
 
-const HELP_LIST_ITEM_STYLES = { alignItems: 'flex-start', py: 1 };
+const HELP_LIST_ITEM_STYLES = { alignItems: 'flex-start', py: 1.5 };
 
-const SECTION_WRAPPER_STYLES = { py: 12, bgcolor: 'background.paper' };
-const DESCRIPTION_TEXT_STYLES = { fontSize: '1.25rem', lineHeight: 1.8, mb: 6, color: 'text.secondary' };
-const SECTION_TITLE_STYLES = { fontSize: '1.5rem', fontWeight: 600, mb: 3 };
+const SECTION_WRAPPER_STYLES = { py: { xs: 12, md: 18 }, bgcolor: 'background.default' };
+const DESCRIPTION_TEXT_STYLES = { fontSize: '1.25rem', lineHeight: 1.8, mb: 10, color: 'text.secondary', fontWeight: 300, fontStyle: 'italic' };
+const SECTION_TITLE_STYLES = { fontSize: '1.25rem', fontWeight: 600, mb: 3, textTransform: 'uppercase', letterSpacing: '0.05em' };
 const NOT_FIT_TAGLINE_STYLES = { 
   fontStyle: 'italic', 
   color: 'text.secondary', 
-  borderLeft: '3px solid', 
-  borderColor: 'error.main', 
-  pl: 2 
+  borderLeft: '1px solid', 
+  borderColor: 'primary.main', 
+  pl: 3,
+  mt: 2
 };
 
 const HelpAreas = () => {

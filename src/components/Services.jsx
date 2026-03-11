@@ -1,5 +1,5 @@
-import React, { memo } from 'react';
-import { Box, Container, Typography, Grid, Paper, Button, Stack, Link } from '@mui/material';
+import { memo } from 'react';
+import { Box, Container, Typography, Grid, Button, Divider } from '@mui/material';
 import { Link as RouterLink } from 'react-router-dom';
 import { Element } from 'react-scroll';
 
@@ -27,87 +27,63 @@ const services = [
   }
 ];
 
-const SERVICE_PAPER_STYLES = (isPrimary) => ({
-  p: 4,
+const SERVICE_PAPER_STYLES = () => ({
+  p: { xs: 4, md: 6 },
   height: '100%',
   display: 'flex',
   flexDirection: 'column',
-  border: '1px solid #E0D8D0',
-  borderTop: isPrimary ? '4px solid #2C2520' : '1px solid #E0D8D0',
-  bgcolor: isPrimary ? '#F9F7F5' : 'background.paper',
-  transition: 'transform 0.2s',
-  '&:hover': { transform: 'translateY(-4px)' }
+  textAlign: 'center',
+  border: 'none',
+  bgcolor: 'transparent',
+  transition: 'all 0.3s ease'
 });
 
 const Services = () => {
   return (
-    <Box component="section" sx={{ py: 12, bgcolor: 'background.default' }}>
+    <Box component="section" sx={{ py: { xs: 12, md: 18 }, bgcolor: 'background.default' }}>
       <Element name="services" id="services">
         <Container maxWidth="lg">
-          <Typography variant="h2" align="center" gutterBottom sx={{ fontSize: '2.5rem', mb: 8 }}>
+          <Typography variant="h2" align="center" sx={{ mb: 10, position: 'relative', '&:after': { content: '""', position: 'absolute', bottom: -20, left: '50%', transform: 'translateX(-50%)', width: 60, height: 1, bgcolor: 'primary.main', opacity: 0.3 } }}>
             Services
           </Typography>
-          <Grid container spacing={4}>
+          <Grid container spacing={6} justifyContent="center">
             {services.map((service, index) => (
-              <Grid item xs={12} md={4} key={index}>
-                <Paper
-                  elevation={0}
-                  sx={SERVICE_PAPER_STYLES(service.isPrimary)}
+              <Grid item xs={12} md={8} lg={6} key={index}>
+                <Box
+                  sx={SERVICE_PAPER_STYLES()}
                 >
-                  <Typography variant="h3" gutterBottom sx={{ fontSize: '1.5rem', fontWeight: 600 }}>
+                  <Typography variant="h3" gutterBottom sx={{ fontSize: '1.75rem', fontWeight: 500, mb: 3 }}>
                     {service.title}
                   </Typography>
-                  <Typography variant="body1" sx={{ mb: 3, flexGrow: 1, color: 'text.secondary', lineHeight: 1.7 }}>
+                  <Typography variant="body1" sx={{ mb: 4, color: 'text.secondary', maxWidth: '500px', mx: 'auto' }}>
                     {service.description}
                   </Typography>
-                  <Typography variant="body2" sx={{ mb: 4, fontWeight: 600, color: 'primary.main', textTransform: 'uppercase', letterSpacing: '0.05em' }}>
-                    {service.status}
-                  </Typography>
-
-                  <Stack spacing={2}>
-                    {service.isPrimary ? (
-                      <>
-                        <Button
-                          component={RouterLink}
-                          to="/supervision-fit"
-                          variant="contained"
-                          fullWidth
-                          sx={{ textTransform: 'none', py: 1.5 }}
-                        >
-                          Request a Supervision Fit Consult &rarr;
-                        </Button>
-                        <Link
-                          component={RouterLink}
-                          to={service.exploreLink}
-                          sx={{
-                            textAlign: 'center',
-                            fontSize: '0.9rem',
-                            color: 'text.secondary',
-                            textDecoration: 'none',
-                            '&:hover': { textDecoration: 'underline' }
-                          }}
-                        >
-                          Explore Supervision &rarr;
-                        </Link>
-                      </>
-                    ) : (
-                      <Link
-                        component={RouterLink}
-                        to={service.exploreLink}
-                        sx={{
-                          textAlign: 'left',
-                          fontSize: '0.9rem',
-                          fontWeight: 600,
-                          color: 'primary.main',
-                          textDecoration: 'none',
-                          '&:hover': { textDecoration: 'underline' }
-                        }}
-                      >
-                        Explore {service.title} &rarr;
-                      </Link>
-                    )}
-                  </Stack>
-                </Paper>
+                  
+                  <Box>
+                    <Button
+                      component={RouterLink}
+                      to={service.exploreLink}
+                      variant="outlined"
+                      sx={{ 
+                        textTransform: 'uppercase', 
+                        fontSize: '0.75rem', 
+                        letterSpacing: '0.15em',
+                        px: 4,
+                        py: 1.5,
+                        borderColor: 'primary.main',
+                        '&:hover': {
+                          bgcolor: 'primary.main',
+                          color: 'primary.contrastText'
+                        }
+                      }}
+                    >
+                      Explore {service.title} &rarr;
+                    </Button>
+                  </Box>
+                </Box>
+                {index < services.length - 1 && (
+                  <Divider sx={{ my: 6, opacity: 0.1, maxWidth: '200px', mx: 'auto' }} />
+                )}
               </Grid>
             ))}
           </Grid>
