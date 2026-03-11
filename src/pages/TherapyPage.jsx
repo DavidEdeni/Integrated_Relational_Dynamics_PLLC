@@ -1,5 +1,7 @@
-import { Box, Container, Typography, Divider, Button, List, ListItem, ListItemText } from '@mui/material';
+import { Box, Container, Typography, Divider, List, ListItem, ListItemText, Button } from '@mui/material';
 import { Link as RouterLink } from 'react-router-dom';
+import woodLogoImg from '../assets/8a46ffa53352710009d9cc110eff458f-0.jpg';
+import spheresImg from '../assets/8a46ffa53352710009d9cc110eff458f-4.jpg';
 
 
 const PAGE_WRAPPER_STYLES = { py: { xs: 12, md: 18 }, bgcolor: 'background.default' };
@@ -56,8 +58,26 @@ const TherapyPage = () => {
           Therapy
         </Typography>
         <Typography variant="h5" sx={STATUS_SUBTITLE_STYLES}>
-          Beginning October 2026
+          Now accepting inquiries
         </Typography>
+
+        <Box sx={{ display: 'flex', justifyContent: 'center', mb: 10 }}>
+          <Box
+            component="img"
+            src={woodLogoImg}
+            alt="Integrated Relational Dynamics Logo"
+            sx={{ maxWidth: '400px', width: '100%', height: 'auto', borderRadius: '2px', opacity: 0.9 }}
+          />
+        </Box>
+
+        <Box sx={{ display: 'flex', justifyContent: 'center', mb: 10 }}>
+          <Box
+            component="img"
+            src={spheresImg}
+            alt="Ordered wooden spheres"
+            sx={{ maxWidth: '400px', width: '100%', height: 'auto', borderRadius: '2px', opacity: 0.9 }}
+          />
+        </Box>
 
         <Box sx={CONTENT_CONTAINER_CONTAINER_STYLES}>
           <Box sx={CONTENT_CONTAINER_STYLES}>
