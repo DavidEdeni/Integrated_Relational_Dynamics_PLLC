@@ -104,7 +104,7 @@ const TherapyPage = () => {
                 href="mailto:integrated.relational.dynamics@gmail.com?subject=Therapy Interest Inquiry (Oct 2026)"
                 sx={{ px: 6, py: 2 }}
               >
-                Inquire via Email &rarr;
+                Inquire via Email +
               </Button>
             </Box>
           </Box>

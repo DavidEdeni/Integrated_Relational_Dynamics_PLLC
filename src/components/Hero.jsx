@@ -76,9 +76,9 @@ const Hero = () => {
         </Stack>
         
         <Box sx={{ mt: 8, display: 'flex', justifyContent: 'center', gap: 4, flexWrap: 'wrap' }}>
-          <LinkRouter to="/therapy" label="Therapy &rarr;" />
-          <LinkRouter to="/consulting" label="Consulting &rarr;" />
-          <LinkRouter to="/supervision" label="Supervision &rarr;" />
+          <LinkRouter to="/therapy" label="Therapy +" />
+          <LinkRouter to="/consulting" label="Consulting +" />
+          <LinkRouter to="/supervision" label="Supervision +" />
         </Box>
       </Container>
     </Box>

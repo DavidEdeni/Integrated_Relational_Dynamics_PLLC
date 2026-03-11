@@ -25,7 +25,7 @@ const ServicePageTemplate = ({ title, subtitle, description, status, linkToFit }
             variant="contained"
             size="large"
           >
-            Request a Supervision Fit Consult &rarr;
+            Request a Supervision Fit Consult +
           </Button>
         )}
       </Paper>

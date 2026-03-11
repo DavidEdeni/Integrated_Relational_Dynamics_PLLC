@@ -102,7 +102,7 @@ const StartHere = () => {
               sx={CTA_BUTTON_STYLES}
               aria-label="Request a Supervision Fit Consultation"
             >
-              Request a Consultation &rarr;
+              Request a Consultation +
             </Button>
           </Grid>
           

@@ -77,7 +77,7 @@ const Services = () => {
                         }
                       }}
                     >
-                      Explore {service.title} &rarr;
+                      Explore {service.title} +
                     </Button>
                   </Box>
                 </Box>

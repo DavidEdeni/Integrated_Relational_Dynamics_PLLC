@@ -96,7 +96,7 @@ const ConsultingPage = () => {
                 sx={{ px: 6, py: 2 }}
                 aria-label="Inquire about consulting services via email"
               >
-                Inquire via Email &rarr;
+                Inquire via Email +
               </Button>
             </Box>
           </Box>

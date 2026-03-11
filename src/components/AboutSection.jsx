@@ -94,7 +94,7 @@ const AboutSection = () => {
                   sx={CTA_LINK_STYLES}
                   aria-label="Request a Supervision Fit Consultation"
                 >
-                  Request a Supervision Fit Consult &rarr;
+                  Request a Supervision Fit Consult +
                 </Link>
               </Box>
             </Grid>

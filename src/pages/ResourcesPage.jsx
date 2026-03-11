@@ -129,7 +129,7 @@ const ResourceLink = ({ label, shade = false }) => (
         '&:hover': { textDecoration: 'underline' }
       }}
     >
-      View PDF &rarr;
+      View PDF +
     </Link>
   </Box>
 );

@@ -90,7 +90,7 @@ const SupervisionPage = () => {
                 sx={{ px: 6, py: 2 }}
                 aria-label="Request a Supervision Fit Consultation"
               >
-                Request a Consultation &rarr;
+                Request a Consultation +
               </Button>
             </Box>
           </Box>
