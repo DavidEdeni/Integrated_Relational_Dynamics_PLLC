@@ -21,25 +21,41 @@ const Footer = () => {
   };
 
   return (
-    <Box component="footer" id="contact" sx={{ bgcolor: 'background.paper', pt: 8, pb: 6, borderTop: '1px solid #E0D8D0' }}>
+    <Box 
+      component="footer" 
+      id="contact" 
+      sx={{ 
+        background: 'linear-gradient(rgba(42, 27, 20, 0.92), rgba(42, 27, 20, 0.92)), url("/src/assets/wood-bg.png")',
+        backgroundSize: 'cover',
+        backgroundPosition: 'center',
+        pt: 10, 
+        pb: 8, 
+        borderTop: '1px solid rgba(215, 204, 200, 0.1)',
+        color: '#F2EFE9'
+      }}
+    >
+
       <Container maxWidth="lg">
         <Grid container spacing={4} sx={{ mb: 6 }}>
           <Grid item xs={12} md={6}>
-            <Typography variant="h2" gutterBottom sx={{ fontSize: '1.75rem', fontWeight: 600 }}>
+            <Typography variant="h2" gutterBottom sx={{ fontSize: '1.75rem', fontWeight: 600, color: '#F2EFE9' }}>
               Contact
             </Typography>
-            <Typography variant="body1" paragraph color="text.secondary" sx={{ maxWidth: '90%' }}>
+            <Typography variant="body1" paragraph sx={{ color: 'rgba(242, 239, 233, 0.7)', maxWidth: '90%' }}>
+
               This work is grounded in clear limits that protect supervision and sound clinical judgment. Communication boundaries are defined. Crisis coverage is not provided. Therapy or supervision is not used as leverage in relational conflict.
             </Typography>
-            <Typography variant="body2" color="text.primary" sx={{ fontWeight: 600, mt: 2 }}>
+            <Typography variant="body2" sx={{ fontWeight: 600, mt: 2, color: '#F2EFE9' }}>
               Telehealth (Texas)
             </Typography>
-            <Typography variant="body2" color="text.secondary">
+            <Typography variant="body2" sx={{ color: 'rgba(242, 239, 233, 0.7)' }}>
               Private pay &middot; Superbills available (reimbursement not guaranteed)
             </Typography>
+
           </Grid>
           <Grid item xs={12} md={6}>
-            <Box sx={{ bgcolor: '#F9F7F5', p: 4, border: '1px solid #E0D8D0' }}>
+            <Box sx={{ bgcolor: 'rgba(255, 255, 255, 0.03)', p: 4, border: '1px solid rgba(215, 204, 200, 0.15)', backdropFilter: 'blur(4px)' }}>
+
               <Stack spacing={2}>
                 <Typography variant="body1">
                   <strong>Supervision and Consulting:</strong> accepting now.
@@ -59,10 +75,12 @@ const Footer = () => {
                   sx={{
                     fontSize: '1.1rem',
                     fontWeight: 600,
-                    color: 'primary.main',
-                    textDecoration: 'underline'
+                    color: '#F2EFE9',
+                    textDecoration: 'underline',
+                    '&:hover': { color: 'primary.light' }
                   }}
                 >
+
                   integrated.relational.dynamics@gmail.com
                 </Link>
               </Stack>
@@ -92,9 +110,10 @@ const Footer = () => {
             </Link>
           </Stack>
           
-          <Typography variant="body2" color="text.secondary" sx={{ fontSize: '0.8rem' }}>
+          <Typography variant="body2" sx={{ fontSize: '0.8rem', color: 'rgba(242, 239, 233, 0.5)' }}>
             &copy; {new Date().getFullYear()} Integrated Relational Dynamics, PLLC. All rights reserved.
           </Typography>
+
         </Box>
       </Container>
     </Box>
@@ -107,10 +126,11 @@ const FooterLink = ({ to, label }) => (
     to={to}
     sx={{
       fontSize: '0.85rem',
-      color: 'text.secondary',
+      color: 'rgba(242, 239, 233, 0.7)',
       textDecoration: 'none',
-      '&:hover': { color: 'primary.main' }
+      '&:hover': { color: '#FFF' }
     }}
+
   >
     {label}
   </Link>

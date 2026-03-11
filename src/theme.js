@@ -3,41 +3,43 @@ import { createTheme } from '@mui/material/styles';
 const theme = createTheme({
   palette: {
     primary: {
-      main: '#2D2926', // Charcoal/Dark Brown
+      main: '#2A1B14', // Deep Walnut
       contrastText: '#F2EFE9',
     },
     secondary: {
-      main: '#6D5D50', // Muted Brown
-      light: '#A89E94',
+      main: '#4B3621', // Warm Cocoa
+      light: '#7A624E',
     },
     background: {
       default: '#F2EFE9', // Sophisticated Creme
       paper: '#FDFCFB',
     },
     text: {
-      primary: '#2D2926',
-      secondary: '#6D5D50',
+      primary: '#2A1B14',
+      secondary: '#4B3621',
     },
-    divider: '#E0D8D0',
+    divider: '#D7CCC8',
   },
+
   typography: {
     fontFamily: '"Inter", "system-ui", sans-serif',
     h1: {
       fontFamily: '"Playfair Display", serif',
       fontWeight: 500,
       letterSpacing: '-0.01em',
-      color: '#2D2926',
+      color: '#2A1B14',
     },
     h2: {
       fontFamily: '"Playfair Display", serif',
       fontWeight: 500,
-      color: '#2D2926',
+      color: '#2A1B14',
     },
     h3: {
       fontFamily: '"Playfair Display", serif',
       fontWeight: 500,
-      color: '#2D2926',
+      color: '#2A1B14',
     },
+
     h4: {
       fontFamily: '"Playfair Display", serif',
       fontWeight: 500,
@@ -48,8 +50,9 @@ const theme = createTheme({
       textTransform: 'uppercase',
       letterSpacing: '0.12em',
       fontSize: '0.85rem',
-      color: '#6D5D50',
+      color: '#4B3621',
     },
+
     body1: {
       fontSize: '1.1rem',
       lineHeight: 1.8,
@@ -72,8 +75,9 @@ const theme = createTheme({
       styleOverrides: {
         body: {
           backgroundColor: '#F2EFE9',
-          color: '#2D2926',
+          color: '#2A1B14',
         },
+
       },
     },
     MuiButton: {
@@ -84,20 +88,21 @@ const theme = createTheme({
           transition: 'all 0.4s cubic-bezier(0.4, 0, 0.2, 1)',
         },
         containedPrimary: {
-          backgroundColor: '#2D2926',
+          backgroundColor: '#2A1B14',
           '&:hover': {
-            backgroundColor: '#000000',
+            backgroundColor: '#1A110D',
             transform: 'translateY(-1px)',
           },
         },
         outlinedPrimary: {
-          borderColor: '#2D2926',
-          color: '#2D2926',
+          borderColor: '#2A1B14',
+          color: '#2A1B14',
           '&:hover': {
-            backgroundColor: 'rgba(45, 41, 38, 0.04)',
-            borderColor: '#000000',
+            backgroundColor: 'rgba(42, 27, 20, 0.04)',
+            borderColor: '#1A110D',
           },
         },
+
       },
     },
     MuiPaper: {

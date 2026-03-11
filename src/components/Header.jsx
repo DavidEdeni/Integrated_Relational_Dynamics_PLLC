@@ -5,11 +5,14 @@ import { scroller } from 'react-scroll';
 import logo from '../assets/8a46ffa53352710009d9cc110eff458f-0.jpg';
 
 const HEADER_STYLES = { 
-  bgcolor: 'primary.main', 
-  borderBottom: '1px solid rgba(255, 255, 255, 0.1)', 
+  background: 'linear-gradient(rgba(42, 27, 20, 0.85), rgba(42, 27, 20, 0.85)), url("/src/assets/wood-bg.png")',
+  backgroundSize: 'cover',
+  backgroundPosition: 'center',
+  borderBottom: '1px solid rgba(215, 204, 200, 0.15)', 
   backdropFilter: 'blur(8px)',
   zIndex: 1100
 };
+
 
 const LOGO_BOX_STYLES = { 
   display: 'flex', 
@@ -45,7 +48,7 @@ const NAV_BOX_STYLES = {
 };
 
 const NAV_ITEM_STYLES = {
-  color: 'rgba(242, 239, 233, 0.8)',
+  color: 'rgba(242, 239, 233, 0.9)',
   fontSize: '0.8rem',
   fontWeight: 500,
   textTransform: 'uppercase',
@@ -58,9 +61,11 @@ const NAV_ITEM_STYLES = {
   transition: 'all 0.3s ease',
   '&:hover': {
     color: '#FFF',
-    transform: 'translateY(-1px)'
+    transform: 'translateY(-1px)',
+    textDecoration: 'underline'
   }
 };
+
 
 const Header = () => {
   const location = useLocation();
