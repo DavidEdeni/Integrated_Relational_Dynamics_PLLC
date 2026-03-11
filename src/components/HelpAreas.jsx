@@ -11,9 +11,20 @@ const HELP_IMAGE_STYLES = {
 
 const HELP_LIST_ITEM_STYLES = { alignItems: 'flex-start', py: 1 };
 
+const SECTION_WRAPPER_STYLES = { py: 12, bgcolor: 'background.paper' };
+const DESCRIPTION_TEXT_STYLES = { fontSize: '1.25rem', lineHeight: 1.8, mb: 6, color: 'text.secondary' };
+const SECTION_TITLE_STYLES = { fontSize: '1.5rem', fontWeight: 600, mb: 3 };
+const NOT_FIT_TAGLINE_STYLES = { 
+  fontStyle: 'italic', 
+  color: 'text.secondary', 
+  borderLeft: '3px solid', 
+  borderColor: 'error.main', 
+  pl: 2 
+};
+
 const HelpAreas = () => {
   return (
-    <Box sx={{ py: 12, bgcolor: 'background.paper' }}>
+    <Box sx={SECTION_WRAPPER_STYLES}>
       <Container maxWidth="lg">
         <Grid container spacing={8} alignItems="center">
           <Grid item xs={12} md={6}>
@@ -26,11 +37,11 @@ const HelpAreas = () => {
             />
           </Grid>
           <Grid item xs={12} md={6}>
-            <Typography variant="body1" sx={{ fontSize: '1.25rem', lineHeight: 1.8, mb: 6, color: 'text.secondary' }}>
+            <Typography variant="body1" sx={DESCRIPTION_TEXT_STYLES}>
               This work helps clinicians and clients name what is true, clarify what they are responsible for carrying, and identify sustainable next steps—without coercion, control, or performance pressure.
             </Typography>
 
-            <Typography variant="h3" gutterBottom sx={{ fontSize: '1.5rem', fontWeight: 600, mb: 3 }}>
+            <Typography variant="h3" gutterBottom sx={SECTION_TITLE_STYLES}>
               Common fit areas
             </Typography>
             <List sx={{ mb: 6 }}>
@@ -50,10 +61,10 @@ const HelpAreas = () => {
               ))}
             </List>
 
-            <Typography variant="h3" gutterBottom sx={{ fontSize: '1.5rem', fontWeight: 600, mb: 2 }}>
+            <Typography variant="h3" gutterBottom sx={SECTION_TITLE_STYLES}>
               Not a fit
             </Typography>
-            <Typography variant="body1" sx={{ fontStyle: 'italic', color: 'text.secondary', borderLeft: '3px solid', borderColor: 'error.main', pl: 2 }}>
+            <Typography variant="body1" sx={NOT_FIT_TAGLINE_STYLES}>
               Quick leverage, forced compliance, or outcome guarantees.
             </Typography>
           </Grid>

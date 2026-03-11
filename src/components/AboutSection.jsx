@@ -11,12 +11,26 @@ const ABOUT_IMAGE_STYLES = {
   border: '1px solid #E0D8D0'
 };
 
+const SECTION_BOX_STYLES = { py: 12, bgcolor: 'background.paper' };
+const HEADER_TITLE_STYLES = { fontSize: '2.5rem', mb: 8 };
+const SUBHEADER_TITLE_STYLES = { fontSize: '1.5rem', fontWeight: 600, mb: 3 };
+const ITEM_TEXT_STYLES = { py: 0.5 };
+const ITALIC_TEXT_STYLES = { mt: 4, fontStyle: 'italic', color: 'text.secondary' };
+const LINK_WRAPPER_STYLES = { mt: 4 };
+const CTA_LINK_STYLES = {
+  fontSize: '1rem',
+  fontWeight: 600,
+  color: 'primary.main',
+  textDecoration: 'underline',
+  '&:hover': { textDecoration: 'none' }
+};
+
 const AboutSection = () => {
   return (
-    <Box component="section" sx={{ py: 12, bgcolor: 'background.paper' }}>
+    <Box component="section" sx={SECTION_BOX_STYLES}>
       <Element name="about" id="about">
         <Container maxWidth="lg">
-          <Typography variant="h2" align="center" gutterBottom sx={{ fontSize: '2.5rem', mb: 8 }}>
+          <Typography variant="h2" align="center" gutterBottom sx={HEADER_TITLE_STYLES}>
             About / Supervision Fit
           </Typography>
           <Grid container spacing={8} alignItems="center">
@@ -30,7 +44,7 @@ const AboutSection = () => {
               />
             </Grid>
             <Grid item xs={12} md={6}>
-              <Typography variant="h3" gutterBottom sx={{ fontSize: '1.5rem', fontWeight: 600, mb: 3 }}>
+              <Typography variant="h3" gutterBottom sx={SUBHEADER_TITLE_STYLES}>
                 Strong fit if you want
               </Typography>
               <List sx={{ mb: 4 }}>
@@ -47,7 +61,7 @@ const AboutSection = () => {
                 ))}
               </List>
 
-              <Typography variant="h3" gutterBottom sx={{ fontSize: '1.5rem', fontWeight: 600, mb: 3, color: 'text.primary' }}>
+              <Typography variant="h3" gutterBottom sx={SUBHEADER_TITLE_STYLES}>
                 May not be a fit if you need
               </Typography>
               <List sx={{ mb: 4 }}>
@@ -64,21 +78,16 @@ const AboutSection = () => {
                 ))}
               </List>
 
-              <Typography variant="body1" sx={{ mt: 4, fontStyle: 'italic', color: 'text.secondary' }}>
+              <Typography variant="body1" sx={ITALIC_TEXT_STYLES}>
                 If this isn’t the right fit, I’ll help you identify a better match.
               </Typography>
 
-              <Box sx={{ mt: 4 }}>
+              <Box sx={LINK_WRAPPER_STYLES}>
                 <Link
                   component={RouterLink}
                   to="/supervision-fit"
-                  sx={{
-                    fontSize: '1rem',
-                    fontWeight: 600,
-                    color: 'primary.main',
-                    textDecoration: 'underline',
-                    '&:hover': { textDecoration: 'none' }
-                  }}
+                  sx={CTA_LINK_STYLES}
+                  aria-label="Request a Supervision Fit Consultation"
                 >
                   Request a Supervision Fit Consult &rarr;
                 </Link>
