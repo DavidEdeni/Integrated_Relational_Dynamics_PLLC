@@ -22,6 +22,25 @@ const LOGO_IMAGE_STYLES = {
   mr: 2 
 };
 
+const LOGO_TEXT_STYLES = {
+  fontWeight: 700,
+  fontSize: { xs: '1rem', md: '1.25rem' },
+  letterSpacing: '0.05em',
+  lineHeight: 1.2,
+  display: { xs: 'none', sm: 'block' }
+};
+
+const TOOLBAR_STYLES = { 
+  justifyContent: 'space-between', 
+  minHeight: { xs: 70, md: 90 } 
+};
+
+const NAV_BOX_STYLES = { 
+  display: 'flex', 
+  alignItems: 'center', 
+  gap: { xs: 2, md: 4 } 
+};
+
 const NAV_ITEM_STYLES = {
   color: 'text.secondary',
   fontSize: '0.85rem',
@@ -76,27 +95,21 @@ const Header = () => {
   return (
     <AppBar position="sticky" elevation={0} sx={HEADER_STYLES}>
       <Container maxWidth="lg">
-        <Toolbar disableGutters sx={{ justifyContent: 'space-between', minHeight: { xs: 70, md: 90 } }}>
-          <Box component={RouterLink} to="/" sx={LOGO_BOX_STYLES}>
+        <Toolbar disableGutters sx={TOOLBAR_STYLES}>
+          <Box component={RouterLink} to="/" sx={LOGO_BOX_STYLES} aria-label="INTEGRATED RELATIONAL DYNAMICS Home">
             <Box component="img" src={logo} alt="IRD Logo" sx={LOGO_IMAGE_STYLES} />
             <Typography
               variant="h6"
-              sx={{
-                fontWeight: 700,
-                fontSize: { xs: '1rem', md: '1.25rem' },
-                letterSpacing: '0.05em',
-                lineHeight: 1.2,
-                display: { xs: 'none', sm: 'block' }
-              }}
+              sx={LOGO_TEXT_STYLES}
             >
               INTEGRATED RELATIONAL DYNAMICS, PLLC
             </Typography>
           </Box>
 
-          <Box component="nav" sx={{ display: 'flex', alignItems: 'center', gap: { xs: 2, md: 4 } }}>
-            <NavItem onClick={() => handleNavClick('services')} label="Services" />
-            <NavItem onClick={() => handleNavClick('about')} label="About" />
-            <NavItem onClick={() => handleNavClick('contact')} label="Contact" />
+          <Box component="nav" sx={NAV_BOX_STYLES}>
+            <NavItem onClick={() => handleNavClick('services')} label="Services" ariaLabel="Scroll to Services section" />
+            <NavItem onClick={() => handleNavClick('about')} label="About" ariaLabel="Scroll to About section" />
+            <NavItem onClick={() => handleNavClick('contact')} label="Contact" ariaLabel="Scroll to Contact section" />
           </Box>
         </Toolbar>
       </Container>
@@ -104,11 +117,12 @@ const Header = () => {
   );
 };
 
-const NavItem = memo(({ onClick, label }) => (
+const NavItem = memo(({ onClick, label, ariaLabel }) => (
   <Link
     component="button"
     onClick={onClick}
     sx={NAV_ITEM_STYLES}
+    aria-label={ariaLabel}
   >
     {label}
   </Link>
