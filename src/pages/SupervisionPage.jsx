@@ -117,27 +117,4 @@ const BulletList = ({ items }) => (
   </List>
 );
 
-const Section = ({ title, children }) => (
-  <Box component="section" sx={{ mb: 8 }}>
-    <Typography variant="h3" gutterBottom sx={{ fontSize: '1.75rem', fontWeight: 600 }}>{title}</Typography>
-    {children}
-  </Box>
-);
-
-const BulletList = ({ items }) => (
-  <List sx={{ mb: 0 }}>
-    {items.map((item, idx) => (
-      <ListItem key={idx} disableGutters sx={{ alignItems: 'flex-start', py: 0.5 }}>
-        <ListItemText primary={<Typography variant="body1" color="text.secondary"><Box component="span" sx={{ mr: 2, fontWeight: 700 }} aria-hidden="true">&mdash;</Box> {item}</Typography>} />
-      </ListItem>
-    ))}
-  </List>
-);
-
-const PageLink = ({ href, children, sx }) => (
-  <Box component="a" href={href} sx={{ color: 'primary.main', textDecoration: 'none', fontWeight: 600, ...sx }}>
-    {children}
-  </Box>
-);
-
 export default SupervisionPage;

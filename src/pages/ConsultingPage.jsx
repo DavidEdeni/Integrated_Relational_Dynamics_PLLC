@@ -1,100 +1,96 @@
 import { Box, Container, Typography, Stack, Paper, Divider, List, ListItem, ListItemText, Link, Button } from '@mui/material';
 
 
-const PAGE_WRAPPER_STYLES = { py: 8, bgcolor: 'background.default' };
-const PAGE_TITLE_STYLES = { mb: 1, fontSize: { xs: '2.5rem', md: '3.5rem' } };
-const STATUS_SUBTITLE_STYLES = { mb: 6, fontWeight: 600 };
-const CONTENT_PAPER_STYLES = { p: { xs: 4, md: 8 }, border: '1px solid #E0D8D0', bgcolor: 'background.paper' };
-const INTRO_TEXT_STYLES = { fontSize: '1.15rem', lineHeight: 1.8 };
-const BOLD_TEXT_STYLES = { fontWeight: 600 };
-const ERROR_BOX_STYLES = { mt: 3, fontStyle: 'italic', p: 2, bgcolor: '#FFF9F9', borderLeft: '3px solid #B71C1C' };
-const EMAIL_SECTION_WRAPPER_STYLES = { mt: 6 };
-const EMAIL_LINK_STYLES = { mt: 3, fontWeight: 600 };
-const DIVIDER_STYLES = { my: 8 };
-const EMAIL_LINK_TEXT_DECORATION_STYLES = { textDecoration: 'underline' };
+const PAGE_WRAPPER_STYLES = { py: { xs: 12, md: 18 }, bgcolor: 'background.default' };
+const PAGE_TITLE_STYLES = { 
+  textAlign: 'center',
+  mb: 2, 
+  fontSize: { xs: '2.5rem', md: '4rem' },
+  position: 'relative',
+  '&:after': {
+    content: '""',
+    position: 'absolute',
+    bottom: -20,
+    left: '50%',
+    transform: 'translateX(-50%)',
+    width: 80,
+    height: 1,
+    bgcolor: 'primary.main',
+    opacity: 0.2
+  }
+};
+const STATUS_SUBTITLE_STYLES = { 
+  textAlign: 'center',
+  mb: 10, 
+  fontWeight: 600,
+  textTransform: 'uppercase',
+  letterSpacing: '0.1em',
+  fontSize: '0.85rem',
+  color: 'secondary.main',
+  mt: 4
+};
+const CONTENT_CONTAINER_STYLES = { maxWidth: '800px', mx: 'auto' };
 
 const ConsultingPage = () => {
   return (
     <Box sx={PAGE_WRAPPER_STYLES}>
-      <Container maxWidth="md">
-        <Typography variant="h1" gutterBottom sx={PAGE_TITLE_STYLES}>
+      <Container maxWidth="lg">
+        <Box sx={{ mb: 6 }}>
+          <Button 
+            component={RouterLink} 
+            to="/" 
+            sx={{ 
+              color: 'text.secondary', 
+              fontSize: '0.75rem', 
+              letterSpacing: '0.1em',
+              '&:hover': { color: 'primary.main', bgcolor: 'transparent', textDecoration: 'underline' }
+            }}
+          >
+            &larr; Back to Home
+          </Button>
+        </Box>
+
+        <Typography variant="h1" sx={PAGE_TITLE_STYLES}>
           Consulting
         </Typography>
-        <Typography variant="h5" color="primary.main" gutterBottom sx={STATUS_SUBTITLE_STYLES}>
-          Now accepting consulting inquiries.
+        <Typography variant="h5" sx={STATUS_SUBTITLE_STYLES}>
+          Now accepting inquiries
         </Typography>
 
-        <Paper elevation={0} sx={CONTENT_PAPER_STYLES}>
-          
-          <Section title="Who this is for">
-             <Typography variant="body1" paragraph color="text.secondary" sx={INTRO_TEXT_STYLES}>
-              Consulting is for people who need clarity before taking action—especially when decisions are high-stakes, costly, or contested. This work helps leaders, clinicians, and organizations identify what is true, clarify responsibilities, and move forward without coercion or performance pressure.
-            </Typography>
-             <Typography variant="body1" gutterBottom sx={BOLD_TEXT_STYLES}>
-              Common consulting situations:
-            </Typography>
-             <BulletList items={[
-              "Role confusion or unclear authority (who decides, who owns what, who is responsible)",
-              "Decision bottlenecks where every option involves loss or tradeoffs",
-              "Chronic conflict patterns within a team or system (such as escalation, avoidance, or stalled follow-through)",
-              "Accountability breakdowns (process replacing ownership, optics replacing repair)",
-              "Transitions Under Strain (Growth, Restructuring, Leadership Change, Crisis Aftermath)"
-            ]} />
-             <Typography variant="body2" color="error.main" sx={ERROR_BOX_STYLES}>
-               Not a fit for crisis response, HR adjudication, legal advice, or pressure-work meant to control others.
-            </Typography>
-          </Section>
+        <Box sx={{ mt: 10 }}>
+          <Box sx={CONTENT_CONTAINER_STYLES}>
+            <Section title="Who this is for">
+              <Typography variant="body1" sx={{ fontSize: '1.25rem', lineHeight: 1.9, fontWeight: 300, mb: 4 }}>
+                Consulting is for people who need clarity before taking action—especially when decisions are high-stakes, costly, or contested. This work helps leaders, clinicians, and organizations identify what is true.
+              </Typography>
+            </Section>
 
-          <Section title="What consulting is">
-            <Typography variant="body1" color="text.secondary">
-              Consulting at Integrated Relational Dynamics involves clarity before action for individuals, leaders, and organizations navigating authority, role strain, and responsibility under cost—especially when decisions feel high-stakes or stuck.
-            </Typography>
-          </Section>
+            <Section title="Common situations">
+              <BulletList items={[
+                "Role confusion or unclear authority (who decides, who owns what)",
+                "Decision bottlenecks where every option involves loss or tradeoffs",
+                "Chronic conflict patterns within a team or system",
+                "Accountability breakdowns",
+                "Transitions under strain"
+              ]} />
+            </Section>
 
-          <Section title="Engagement options">
-             <BulletList items={[
-              { primary: "Single Consulting Consult (60–90 minutes)", secondary: "Clarify the situation, map constraints, and identify the next responsible step." },
-              { primary: "Short Series (3–6 sessions)", secondary: "Sustained clarity work for complex dynamics, role strain, or decision pressure." },
-              { primary: "Documentation/deliverables (optional)", secondary: "Brief written summary upon request." }
-            ]} isNested />
-          </Section>
+            <Divider sx={{ my: 10, opacity: 0.1 }} />
 
-          <Section title="Boundaries">
-             <BulletList items={[
-              "Consulting is not psychotherapy or crisis intervention.",
-              "Consulting does not offer legal advice, clinical supervision, or HR adjudication.",
-              "There are no guarantees of specific outcomes, and consulting should not be used as leverage over others."
-            ]} />
-          </Section>
-
-          <Divider sx={DIVIDER_STYLES} />
-
-           <Section title="Request a Consulting Inquiry">
-            <Typography variant="body1" paragraph color="text.secondary">
-              If you’d like to explore fit, send an email including:
-            </Typography>
-            <BulletList items={[
-              "Your state and role (individual, leader, or organization)",
-              "The situation summarized in four to six sentences without including sensitive details.",
-              "Which decision or responsibility do you need clarity on?",
-              "Timeline and overall availability"
-            ]} />
-            <Stack direction="row" justifyContent="center" sx={EMAIL_SECTION_WRAPPER_STYLES}>
-               <Button 
-                variant="contained" 
-                size="large" 
-                href="mailto:integrated.relational.dynamics@gmail.com?subject=Consulting Inquiry"
+            <Box sx={{ textAlign: 'center' }}>
+              <Button
+                component={RouterLink}
+                to="/supervision-fit"
+                variant="contained"
+                size="large"
+                sx={{ px: 6, py: 2 }}
                 aria-label="Inquire about consulting services via email"
-               >
-                 Inquire via Email &rarr;
-               </Button>
-            </Stack>
-            <Typography variant="body2" align="center" sx={EMAIL_LINK_STYLES}>
-              Email: <Link href="mailto:integrated.relational.dynamics@gmail.com" sx={EMAIL_LINK_TEXT_DECORATION_STYLES} aria-label="Send email to integrated.relational.dynamics@gmail.com">integrated.relational.dynamics@gmail.com</Link>
-            </Typography>
-          </Section>
-
-        </Paper>
+              >
+                Inquire via Email &rarr;
+              </Button>
+            </Box>
+          </Box>
+        </Box>
       </Container>
     </Box>
   );
@@ -102,26 +98,23 @@ const ConsultingPage = () => {
 
 const Section = ({ title, children }) => (
   <Box component="section" sx={{ mb: 8 }}>
-    <Typography variant="h3" gutterBottom sx={{ fontSize: '1.75rem', fontWeight: 600 }}>{title}</Typography>
+    <Typography variant="h3" sx={{ fontSize: '1.25rem', fontWeight: 600, mb: 3, textTransform: 'uppercase', letterSpacing: '0.05em' }}>{title}</Typography>
     {children}
   </Box>
 );
 
-const BulletList = ({ items, isNested = false }) => (
+const BulletList = ({ items }) => (
   <List sx={{ mb: 0 }}>
     {items.map((item, idx) => (
-      <ListItem key={idx} disableGutters sx={{ alignItems: 'flex-start', py: isNested ? 1.5 : 0.5 }}>
-        {isNested ? (
-          <ListItemText 
-            primary={<Typography variant="h6" sx={{ fontSize: '1.1rem', fontWeight: 600 }}>{item.primary}</Typography>} 
-            secondary={<Typography variant="body2" color="text.secondary">{item.secondary}</Typography>} 
-          />
-        ) : (
-          <ListItemText primary={<Typography variant="body1" color="text.secondary"><Box component="span" sx={{ mr: 2, fontWeight: 700 }} aria-hidden="true">&mdash;</Box> {item}</Typography>} />
-        )}
+      <ListItem key={idx} disableGutters sx={{ alignItems: 'flex-start', py: 1.5 }}>
+        <ListItemText primary={<Typography variant="body1" sx={{ color: 'text.secondary', lineHeight: 1.7 }}>{item}</Typography>} />
       </ListItem>
     ))}
   </List>
+);
+
+export default ConsultingPage;
+/List>
 );
 
 export default ConsultingPage;
