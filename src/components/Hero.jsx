@@ -75,10 +75,27 @@ const Hero = () => {
           </Button>
         </Stack>
         
-        <Box sx={{ mt: 8, display: 'flex', justifyContent: 'center', gap: 4, flexWrap: 'wrap' }}>
-          <LinkRouter to="/therapy" label="Therapy +" />
-          <LinkRouter to="/consulting" label="Consulting +" />
-          <LinkRouter to="/supervision" label="Supervision +" />
+        <Box sx={{ mt: 8, display: 'flex', flexDirection: 'column', alignItems: 'center', gap: 4 }}>
+          <Box sx={{ display: 'flex', justifyContent: 'center', gap: 4, flexWrap: 'wrap' }}>
+            <LinkRouter to="/therapy" label="Therapy +" />
+            <LinkRouter to="/consulting" label="Consulting +" />
+            <LinkRouter to="/supervision" label="Supervision +" />
+          </Box>
+          
+          <Typography 
+            variant="body1" 
+            sx={{ 
+              mt: 4, 
+              fontStyle: 'italic', 
+              color: 'text.secondary', 
+              opacity: 0.7,
+              fontSize: '1.1rem',
+              letterSpacing: '0.05em',
+              fontWeight: 300
+            }}
+          >
+            "Clarity without Coercion"
+          </Typography>
         </Box>
       </Container>
     </Box>
