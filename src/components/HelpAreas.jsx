@@ -1,14 +1,16 @@
 import { memo } from 'react';
 import { Box, Container, Typography, Grid, List, ListItem, ListItemText } from '@mui/material';
-import treeImg from '../assets/8a46ffa53352710009d9cc110eff458f-2.jpg';
+import hourglassImg from '../assets/hourglass.png';
 
 const HELP_IMAGE_STYLES = {
   width: '100%',
-  height: { xs: '400px', md: '700px' },
-  objectFit: 'cover',
-  objectPosition: 'center 35%',
-  borderRadius: '2px',
+  maxHeight: { xs: '450px', md: '750px' },
+  objectFit: 'contain',
+  display: 'block',
+  margin: '0 auto',
   mixBlendMode: 'multiply',
+  filter: 'sepia(0.1) contrast(1.1)',
+  opacity: 0.95
 };
 
 const HELP_LIST_ITEM_STYLES = { alignItems: 'flex-start', py: 1.5 };
@@ -33,8 +35,8 @@ const HelpAreas = () => {
           <Grid item xs={12} md={7}>
             <Box
               component="img"
-              src={treeImg}
-              alt="Grounded tree roots"
+              src={hourglassImg}
+              alt="Elegant hourglass"
               loading="lazy"
               sx={HELP_IMAGE_STYLES}
             />
