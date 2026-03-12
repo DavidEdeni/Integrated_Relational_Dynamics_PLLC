@@ -4,8 +4,11 @@ import treeImg from '../assets/8a46ffa53352710009d9cc110eff458f-2.jpg';
 
 const HELP_IMAGE_STYLES = {
   width: '100%',
-  height: 'auto',
-  borderRadius: '2px'
+  height: { xs: '300px', md: '550px' },
+  objectFit: 'cover',
+  objectPosition: 'center 35%',
+  borderRadius: '2px',
+  mixBlendMode: 'multiply',
 };
 
 const HELP_LIST_ITEM_STYLES = { alignItems: 'flex-start', py: 1.5 };
