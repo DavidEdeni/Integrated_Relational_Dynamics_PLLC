@@ -4,7 +4,7 @@ import treeImg from '../assets/8a46ffa53352710009d9cc110eff458f-2.jpg';
 
 const HELP_IMAGE_STYLES = {
   width: '100%',
-  height: { xs: '300px', md: '550px' },
+  height: { xs: '400px', md: '700px' },
   objectFit: 'cover',
   objectPosition: 'center 35%',
   borderRadius: '2px',
@@ -30,7 +30,7 @@ const HelpAreas = () => {
     <Box sx={SECTION_WRAPPER_STYLES}>
       <Container maxWidth="lg">
         <Grid container spacing={8} alignItems="center">
-          <Grid item xs={12} md={6}>
+          <Grid item xs={12} md={7}>
             <Box
               component="img"
               src={treeImg}
@@ -39,7 +39,7 @@ const HelpAreas = () => {
               sx={HELP_IMAGE_STYLES}
             />
           </Grid>
-          <Grid item xs={12} md={6}>
+          <Grid item xs={12} md={5}>
             <Typography variant="body1" sx={DESCRIPTION_TEXT_STYLES}>
               This work helps clinicians and clients name what is true, clarify what they are responsible for carrying, and identify sustainable next steps—without coercion, control, or performance pressure.
             </Typography>
