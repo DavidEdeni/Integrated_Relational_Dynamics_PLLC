@@ -83,18 +83,19 @@ const Hero = () => {
           </Box>
           
           <Typography 
-            variant="body1" 
+            variant="h4" 
             sx={{ 
-              mt: 4, 
+              mt: 12, 
               fontStyle: 'italic', 
-              color: 'text.secondary', 
-              opacity: 0.7,
-              fontSize: '1.1rem',
-              letterSpacing: '0.05em',
-              fontWeight: 300
+              color: '#3C2F2F', // Dark wood brown
+              fontSize: { xs: '1.75rem', md: '2.5rem' },
+              letterSpacing: '0.02em',
+              fontWeight: 400,
+              fontFamily: '"Playfair Display", serif',
+              opacity: 0.9
             }}
           >
-            "Clarity without Coercion"
+            &ldquo;Clarity without Coercion&rdquo;
           </Typography>
         </Box>
       </Container>
