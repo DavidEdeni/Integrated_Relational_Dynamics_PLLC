@@ -135,9 +135,9 @@ const Hero = () => {
             </Button>
             
             <Box sx={{ display: 'flex', justifyContent: 'center', gap: { xs: 2, md: 4 }, flexWrap: 'wrap', mb: 4 }}>
-              <LinkRouter to="/therapy" label="Therapy +" />
-              <LinkRouter to="/consulting" label="Consulting +" />
               <LinkRouter to="/supervision" label="Supervision +" />
+              <LinkRouter to="/consulting" label="Consulting +" />
+              <LinkRouter to="/therapy" label="Therapy +" />
             </Box>
             
             <Typography variant="body1" sx={DESCRIPTION_TEXT_STYLES}>
