@@ -32,7 +32,7 @@ const LOGO_TEXT_STYLES = {
   fontSize: { xs: '0.9rem', md: '1.1rem' },
   letterSpacing: '0.1em',
   lineHeight: 1.2,
-  color: 'primary.contrastText',
+  color: '#FFF',
   display: { xs: 'none', sm: 'block' }
 };
 
@@ -48,7 +48,7 @@ const NAV_BOX_STYLES = {
 };
 
 const NAV_ITEM_STYLES = {
-  color: 'rgba(242, 239, 233, 0.9)',
+  color: '#FFF',
   fontSize: '0.8rem',
   fontWeight: 500,
   textTransform: 'uppercase',
