@@ -23,7 +23,7 @@ const LOGO_IMAGE_STYLES = {
   boxShadow: '-15px 15px 25px rgba(0,0,0,0.15)', // Off-center drop shadow to match image
   margin: '0 auto',
   mixBlendMode: 'multiply', // blends the white background with the theme background
-  filter: 'contrast(1.05)'
+  filter: 'contrast(1.2) saturate(1.1) brightness(0.95) drop-shadow(2px 4px 6px rgba(0,0,0,0.1))'
 };
 
 const SUBTITLE_STYLES = { 
