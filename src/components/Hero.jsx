@@ -6,9 +6,9 @@ import logoImg from '../assets/Screenshot 2026-03-14 141610.png';
 const HERO_SECTION_STYLES = {
   bgcolor: 'background.default',
   color: 'text.primary',
-  pt: { xs: 4, md: 6 },
-  pb: { xs: 6, md: 10 },
-  minHeight: '80vh',
+  pt: { xs: 5, md: 7 },
+  pb: { xs: 8, md: 12 },
+  minHeight: '85vh',
   display: 'flex',
   alignItems: 'center',
   position: 'relative',
@@ -27,26 +27,26 @@ const LOGO_IMAGE_STYLES = {
   filter: 'contrast(1.4) saturate(1.1) brightness(0.9) drop-shadow(15px 15px 20px rgba(0,0,0,0.8))' // Darker Bottom-right shadow
 };
 
-const SUBTITLE_STYLES = { 
-  letterSpacing: '0.15em', 
-  fontWeight: 600, 
+const SUBTITLE_STYLES = {
+  letterSpacing: '0.15em',
+  fontWeight: 600,
   color: 'secondary.light',
   fontSize: '0.85rem',
   mb: 3,
   textTransform: 'uppercase'
 };
 
-const TITLE_STYLES = { 
-  fontSize: { xs: '3rem', md: '4.5rem' }, 
+const TITLE_STYLES = {
+  fontSize: { xs: '3rem', md: '4.5rem' },
   fontWeight: 500,
   mb: 2,
   lineHeight: 1.1,
   color: 'primary.main'
 };
 
-const NAME_STYLES = { 
-  color: 'text.secondary', 
-  fontWeight: 400, 
+const NAME_STYLES = {
+  color: 'text.secondary',
+  fontWeight: 400,
   fontSize: { xs: '1.4rem', md: '1.6rem' },
   fontStyle: 'italic',
   mb: 4
@@ -76,20 +76,20 @@ const DESCRIPTION_TEXT_STYLES = {
   maxWidth: '600px',
   mx: 'auto',
   lineHeight: 1.6,
-  mt: '220px', // Reduced from 300px
+  mt: '300px', // Original margin
   position: 'relative',
-  top: '-125px', // Reduced from -165px
-  mb: 6
+  top: '-165px', // Shifted up 120px independently
+  mb: 10
 };
 
-const QUOTE_STYLES = { 
-  fontStyle: 'italic', 
+const QUOTE_STYLES = {
+  fontStyle: 'italic',
   color: '#6e615b', // A slightly lighter brown/gray
   fontSize: { xs: '2.5rem', md: '3.5rem' },
   letterSpacing: '0.02em',
   fontWeight: 400,
   opacity: 0.9,
-  mt: 4 // Reduced from 8
+  mt: 8 // Push quote down more
 };
 
 const Hero = () => {
@@ -97,7 +97,7 @@ const Hero = () => {
     <Box sx={HERO_SECTION_STYLES}>
       <Container maxWidth="xl">
         <Grid container spacing={{ xs: 6, md: 10 }} alignItems="center" justifyContent="center">
-          
+
           {/* Left Column: Image */}
           <Grid item xs={12} md={5} sx={{ display: 'flex', justifyContent: { xs: 'center', md: 'flex-end' } }}>
             <Box
@@ -113,11 +113,11 @@ const Hero = () => {
             <Typography variant="h6" sx={SUBTITLE_STYLES}>
               Supervision • Consulting • Therapy
             </Typography>
-            
+
             <Typography variant="h1" sx={TITLE_STYLES}>
               Integrated Relational<br />Dynamics
             </Typography>
-            
+
             <Typography variant="h4" sx={NAME_STYLES}>
               Kotia K. Whitaker, LMFT-S
             </Typography>
@@ -132,13 +132,13 @@ const Hero = () => {
             >
               Request a Consultation
             </Button>
-            
+
             <Box sx={{ display: 'flex', justifyContent: 'center', gap: { xs: 2, md: 4 }, flexWrap: 'wrap', mb: 4 }}>
               <LinkRouter to="/supervision" label="Supervision +" />
               <LinkRouter to="/consulting" label="Consulting +" />
               <LinkRouter to="/therapy" label="Therapy +" />
             </Box>
-            
+
             <Typography variant="body1" sx={DESCRIPTION_TEXT_STYLES}>
               A practice based on <span style={{ textDecoration: 'underline' }}>naming truth</span> that <span style={{ textDecoration: 'underline' }}>helps</span> clarify <span style={{ textDecoration: 'underline' }}>what belongs to you</span> and what does not, without forcing repair, control, or closure
             </Typography>
@@ -146,7 +146,7 @@ const Hero = () => {
             <Typography variant="h3" sx={QUOTE_STYLES}>
               Clarity without Coercion
             </Typography>
-            
+
           </Grid>
 
         </Grid>
@@ -170,9 +170,9 @@ const LinkRouter = memo(({ to, label }) => (
       borderBottom: '1px solid transparent',
       pb: 0.5,
       transition: 'all 0.3s ease',
-      '&:hover': { 
-        color: 'primary.main', 
-        borderColor: 'primary.main' 
+      '&:hover': {
+        color: 'primary.main',
+        borderColor: 'primary.main'
       }
     }}
   >
