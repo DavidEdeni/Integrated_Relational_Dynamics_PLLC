@@ -27,7 +27,6 @@ const theme = createTheme({
       fontWeight: 500,
       letterSpacing: '-0.01em',
       color: '#2A1B14',
-      fontSize: '3rem',
     },
     h2: {
       fontWeight: 500,
@@ -50,12 +49,12 @@ const theme = createTheme({
     },
 
     body1: {
-      fontSize: '1rem',
+      fontSize: '1.1rem',
       lineHeight: 1.8,
       fontWeight: 400,
     },
     body2: {
-      fontSize: '0.9rem',
+      fontSize: '0.95rem',
       lineHeight: 1.7,
       fontWeight: 400,
     },
