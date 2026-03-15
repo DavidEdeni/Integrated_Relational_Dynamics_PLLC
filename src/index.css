@@ -27,11 +27,15 @@
 
 body {
   margin: 0;
-  padding: 0; /* Added padding: 0; */
-  display: flex;
-  place-items: center;
+  padding: 0;
   min-width: 320px;
   min-height: 100vh;
+  overflow-x: hidden;
+}
+
+#root {
+  zoom: 0.9;
+  width: 100%;
 }
 
 /* MUI handles most of this, so we can keep this empty or minimal */

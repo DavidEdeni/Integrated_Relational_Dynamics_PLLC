@@ -6,9 +6,9 @@ import logoImg from '../assets/Screenshot 2026-03-14 141610.png';
 const HERO_SECTION_STYLES = {
   bgcolor: 'background.default',
   color: 'text.primary',
-  pt: { xs: 5, md: 7 },
-  pb: { xs: 8, md: 12 },
-  minHeight: '85vh',
+  pt: { xs: 4, md: 6 },
+  pb: { xs: 6, md: 10 },
+  minHeight: '80vh',
   display: 'flex',
   alignItems: 'center',
   position: 'relative',
@@ -76,10 +76,10 @@ const DESCRIPTION_TEXT_STYLES = {
   maxWidth: '600px',
   mx: 'auto',
   lineHeight: 1.6,
-  mt: '300px', // Original margin
+  mt: '220px', // Reduced from 300px
   position: 'relative',
-  top: '-165px', // Shifted up 120px independently
-  mb: 10
+  top: '-125px', // Reduced from -165px
+  mb: 6
 };
 
 const QUOTE_STYLES = { 
@@ -89,7 +89,7 @@ const QUOTE_STYLES = {
   letterSpacing: '0.02em',
   fontWeight: 400,
   opacity: 0.9,
-  mt: 8 // Push quote down more
+  mt: 4 // Reduced from 8
 };
 
 const Hero = () => {
