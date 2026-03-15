@@ -22,30 +22,25 @@ const theme = createTheme({
   },
 
   typography: {
-    fontFamily: '"Playfair Display", "serif"',
+    fontFamily: '"Inter", "system-ui", sans-serif',
     h1: {
-      fontFamily: '"Playfair Display", serif',
       fontWeight: 500,
       letterSpacing: '-0.01em',
       color: '#2A1B14',
     },
     h2: {
-      fontFamily: '"Playfair Display", serif',
       fontWeight: 500,
       color: '#2A1B14',
     },
     h3: {
-      fontFamily: '"Playfair Display", serif',
       fontWeight: 500,
       color: '#2A1B14',
     },
 
     h4: {
-      fontFamily: '"Playfair Display", serif',
       fontWeight: 500,
     },
     h5: {
-      fontFamily: '"Playfair Display", serif',
       fontWeight: 600,
       textTransform: 'uppercase',
       letterSpacing: '0.12em',
@@ -64,7 +59,6 @@ const theme = createTheme({
       fontWeight: 400,
     },
     button: {
-      fontFamily: '"Playfair Display", serif',
       fontWeight: 500,
       textTransform: 'none',
       letterSpacing: '0.05em',

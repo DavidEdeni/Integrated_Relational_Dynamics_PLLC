@@ -27,7 +27,6 @@ const LOGO_IMAGE_STYLES = {
 };
 
 const LOGO_TEXT_STYLES = {
-  fontFamily: '"Playfair Display", serif',
   fontWeight: 500,
   fontSize: { xs: '0.9rem', md: '1.1rem' },
   letterSpacing: '0.1em',

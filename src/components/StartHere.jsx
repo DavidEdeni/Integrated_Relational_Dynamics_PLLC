@@ -17,7 +17,6 @@ const IMAGE_STYLES = {
 };
 
 const TITLE_STYLES = {
-  fontFamily: '"Playfair Display", serif',
   fontSize: { xs: '2.5rem', md: '3.5rem' },
   mb: 4,
   position: 'relative',

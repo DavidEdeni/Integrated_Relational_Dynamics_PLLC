@@ -88,7 +88,6 @@ const QUOTE_STYLES = {
   fontSize: { xs: '2.5rem', md: '3.5rem' },
   letterSpacing: '0.02em',
   fontWeight: 400,
-  fontFamily: '"Playfair Display", serif',
   opacity: 0.9,
   mt: 8 // Push quote down more
 };
