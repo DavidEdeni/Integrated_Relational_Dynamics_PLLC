@@ -35,7 +35,7 @@ const TherapyPage = () => {
 
         <Box sx={{ mt: 10, textAlign: 'center' }}>
           <Typography variant="body1" sx={{ fontStyle: 'italic', color: 'text.secondary' }}>
-            Currently under construction.Content coming soon.
+            Currently under construction. Content coming soon.
           </Typography>
         </Box>
       </Container>
